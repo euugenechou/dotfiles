@@ -1,4 +1,4 @@
-# Theme
+# Set theme
 ZSH_THEME="spaceship"
 
 # Path to oh-my-zsh installation
@@ -13,6 +13,13 @@ export LANG="$LC_ALL"
 
 # Terminal environment
 export TERM=xterm-256color
+
+# Set editor for local/remote
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='mvim'
+fi
 
 # Environment variables
 # export DB_USER=Eugene
