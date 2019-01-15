@@ -64,7 +64,7 @@ map <C-A> <Esc>:prev<CR>                    " Go to previous file using ctrl + A
 map <C-T> <Esc>:NERDTreeToggle<CR>           " Toggle NERDtree with ctrl + n "
 map <C-G> <Esc>:GitGutterToggle<CR>          " Toggle GitGutter with ctrl + g "
 inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O{
+inoremap {;<CR> {<CR>};<ESC>O
 nnoremap <esc><esc> :noh<return>        " Escape highlights with <ESC><ESC> "
 nnoremap <space><space> i<space><esc>   " Insert space with <space><space> "
 nnoremap <C-K> :move-2<cr>              " Move line up  "
@@ -152,7 +152,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
-Plug 'davidhalter/jedi-vim'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'tpope/vim-abolish'
 Plug 'Townk/vim-autoclose'
