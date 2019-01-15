@@ -53,8 +53,8 @@ syntax on                               " Enable syntax
 "                                    Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <leader>s <Esc>:w<CR>
-nnoremap <leader>w <Esc>:wq<CR>
+nnoremap <leader>w <Esc>:w<CR>
+nnoremap <leader>s <Esc>:wq<CR>
 nnoremap <leader>q <Esc>:q<CR>
 map <C-F> <Esc>:next<CR>                    " Go to next file using ctrl + F "
 map <C-A> <Esc>:prev<CR>                    " Go to previous file using ctrl + A "
@@ -103,7 +103,7 @@ set mouse=a                             " Enable mouse usage
 set modeline                            " Show what I'm doing
 set backspace=eol,start,indent          " Allow backpaces
 set ignorecase                          " Ignore case when searching
-set guifont=Consolas:h11:cANSI            " Set font
+set guifont=Fira\ Code:h11:cANSI            " Set font
 set hlsearch                            " Highlight search results
 set showmatch                           " Display matching brackets
 set mat=2                               " Blink when matching brackets
