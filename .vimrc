@@ -56,6 +56,9 @@ syntax on                               " Enable syntax
 nnoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>s <Esc>:wq<CR>
 nnoremap <leader>q <Esc>:q<CR>
+noremap cp yap<S-}>p
+noremap <leader>a =ip
+set pastetoggle=<leader>z
 map <C-F> <Esc>:next<CR>                    " Go to next file using ctrl + F "
 map <C-A> <Esc>:prev<CR>                    " Go to previous file using ctrl + A "
 map <C-T> <Esc>:NERDTreeToggle<CR>           " Toggle NERDtree with ctrl + n "
