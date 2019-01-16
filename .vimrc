@@ -106,7 +106,6 @@ set mouse=a                             " Enable mouse usage
 set modeline                            " Show what I'm doing
 set backspace=eol,start,indent          " Allow backpaces
 set ignorecase                          " Ignore case when searching
-set guifont=Fira\ Code:h11:cANSI            " Set font
 set hlsearch                            " Highlight search results
 set showmatch                           " Display matching brackets
 set mat=2                               " Blink when matching brackets
