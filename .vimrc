@@ -55,7 +55,7 @@ syntax on                               " Enable syntax
 
 nnoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>s <Esc>:wq<CR>
-nnoremap <leader>q <Esc>:q<CR>
+nnoremap <leader>q <Esc>:q!<CR>
 noremap cp yap<S-}>p
 noremap <leader>a =ip
 set pastetoggle=<leader>z
