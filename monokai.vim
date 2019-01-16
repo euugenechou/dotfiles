@@ -80,7 +80,7 @@ let s:lightgrey   = { "gui": "#575b61", "cterm": "237" }
 let s:darkgrey    = { "gui": "#64645e", "cterm": "239" }
 let s:warmgrey    = { "gui": "#75715E", "cterm": "59" }
 let s:myfg        = { "gui": "#262626", "cterm": "241" }
-let s:mybg        = { "gui": "#262626", "cterm": "233" }
+let s:mybg        = { "gui": "#262626", "cterm": "235" }
 
 let s:pink        = { "gui": "#F92772", "cterm": "197" }
 let s:green       = { "gui": "#A6E22D", "cterm": "148" }

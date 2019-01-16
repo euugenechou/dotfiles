@@ -210,5 +210,5 @@ let g:UltiSnipsSnippetDirectories = ['~/.vim/plugged/vim-snippets/snippets']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-v>"
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
