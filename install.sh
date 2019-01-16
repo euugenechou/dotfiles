@@ -22,13 +22,17 @@ fi
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from .dotfiles
+# Removes .zshrc from $HOME and symlinks the .zshrc file from .dotfiles
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-# Removes .vimrc from $HOME (if it exists) and symlinks the .vimrc file from .dotfiles
+# Removes .vimrc from $HOME and symlinks the .vimrc file from .dotfiles
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+
+# Removes .hyper.js from $HOME and symlinks the .hyper.js file from .dotfiles
+rm -rf $HOME/.hyper.js
+ln -s $HOME/.dotfiles/.hyper.js $HOME/.hyper.js
 
 # Removes monokai.vim from $HOME  and symlinks the monokai.vim file from .dotfiles
 rm -rf $HOME/.vim/colors
