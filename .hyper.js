@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -143,6 +143,7 @@ module.exports = {
     'hyper-font-ligatures',
     'hypercwd',
     'hyper-pane',
+    'hyper-fading-scrollbar'
   ],
 
   // in development, you can create a directory under
