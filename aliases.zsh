@@ -32,4 +32,5 @@ alias vi='vim'
 # Config
 alias vimconfig="vi ~/.vimrc"
 alias zshconfig="vi ~/.zshrc"
+alias hyperconfig="vi ~/.hyper.js"
 alias dotfiles="cd ~/.dotfiles"
