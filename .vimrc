@@ -132,9 +132,11 @@ match Error /\%101v.\+/                  " Error out text past column 80
 "                                  Filetypes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-au FileType c setl sw=4 sts=4 tw=80 et
-au FileType cpp setl sw=4 sts=4 tw=80 et
-au FileType python setl sw=4 sts=4 tw=80 et
+au FileType c setl sw=4 sts=4 tw=100 et
+au FileType cpp setl sw=4 sts=4 tw=100 et
+au FileType python setl sw=4 sts=4 tw=100 et
+au FileType javascript setl sw=2 sts=2 tw=100 et
+au FileType html setl sw=2 sts=2 tw=100 et
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
