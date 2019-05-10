@@ -24,21 +24,25 @@ chsh -s $(which zsh)
 
 # Removes .zshrc from $HOME and symlinks the .zshrc file from .dotfiles
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
 
 # Removes .vimrc from $HOME and symlinks the .vimrc file from .dotfiles
 rm -rf $HOME/.vimrc
-ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
 
 # Removes .hyper.js from $HOME and symlinks the .hyper.js file from .dotfiles
 rm -rf $HOME/.hyper.js
-ln -s $HOME/.dotfiles/.hyper.js $HOME/.hyper.js
+ln -s $HOME/.dotfiles/hyper/.hyper.js $HOME/.hyper.js
 
 # Removes monokai.vim from $HOME  and symlinks the monokai.vim file from .dotfiles
 rm -rf $HOME/.vim/colors
 mkdir $HOME/.vim/colors
-ln -s $HOME/.dotfiles/monokai.vim $HOME/.vim/colors/monokai.vim
+ln -s $HOME/.dotfiles/vim/monokai.vim $HOME/.vim/colors/monokai.vim
 
+# Install fish and oh-my-fish
+brew install fish
+curl -L https://get.oh-my.fish | fish
+omf install simple-ass-prompt
 
 # Install Spaceship prompt
 rm -rf $HOME/.dotfiles/themes/spaceship-prompt
@@ -59,5 +63,5 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfil
 # We will run this last because this will reload the shell
 # source .macos
 
-source $HOME/.dotfiles/.zshrc
+source $HOME/.zshrc
 
