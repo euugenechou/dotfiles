@@ -44,6 +44,12 @@ brew install fish
 curl -L https://get.oh-my.fish | fish
 omf install simple-ass-prompt
 
+# Set up fish config
+rm -rf $HOME/.conf.d/omf.fish
+rm -rf $HOME/.conf.d/aliases.fish
+ln -s $HOME/.dotfiles/fish/omf.fish $HOME/.conf.d/omf.fish
+ln -s $HOME/.dotfiles/fish/aliases.fish $HOME/.conf.d/aliases.fish
+
 # Install Spaceship prompt
 rm -rf $HOME/.dotfiles/themes/spaceship-prompt
 git clone https://github.com/denysdovhan/spaceship-prompt.git $HOME/.dotfiles/themes/spaceship-prompt
