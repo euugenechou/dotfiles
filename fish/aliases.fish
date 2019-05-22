@@ -18,7 +18,7 @@ alias psqlstart="pg_ctl -D /usr/local/var/postgres start"
 alias psqlstop="pg_ctl -D /usr/local/var/postgres stop"
 
 # Miscallaneous
-alias freebsd="ssh euchou@127.0.0.1 -p 2222"
+alias freebsd="ssh euchou@127.0.0.1 -p 6969"
 alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
 alias fuck="say -v Kyoko やばい"
 
