@@ -1,7 +1,5 @@
 # Functions
 
-altercd () { { cd() unset -f cd ; cd $*; ls; altercd; } } ; altercd
-
 function spacetonewline () {
     perl -pe 's/ /\n/g' "$1" >> "$2";
     rm -f "$1";

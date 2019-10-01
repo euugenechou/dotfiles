@@ -143,8 +143,8 @@ match Error /\%81v.\+/                  " Error out text past column 80
 "                                  Filetypes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-au FileType c setl sw=4 sts=4 tw=80 et
-au FileType cpp setl sw=3 sts=3 tw=80 et
+au FileType c setl sw=2 sts=2 tw=80 et
+au FileType cpp setl sw=2 sts=2 tw=80 et
 au FileType python setl sw=4 sts=4 tw=80 et
 au FileType javascript setl sw=2 sts=2 tw=80 et
 au FileType html setl sw=2 sts=2 tw=80 et
@@ -177,6 +177,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-python/python-syntax'
 Plug 'dag/vim-fish'
 Plug 'calincru/flex-bison-syntax'
+Plug 'lervag/vimtex'
 
 call plug#end()
 filetype plugin indent on
@@ -190,7 +191,7 @@ endif
 "                                    Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme badwolf
+colorscheme monokai
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
