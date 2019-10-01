@@ -20,6 +20,6 @@ ln -s $HOME/.dotfiles/vim/monokai.vim $HOME/.vim/colors/monokai.vim
 # Install Vim plugins and copy snippets over.
 vim +PlugInstall +qall
 rm -rf $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
-ln -s $HOME/.dotfiles/.vim/c.snippets $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
+ln -s $HOME/.dotfiles/vim/c.snippets $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
 
 echo "done!"
