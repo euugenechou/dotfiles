@@ -11,11 +11,18 @@ fi
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
 
-# Link Vim color scheme.
+# Clean out original Vim config.
 rm -rf $HOME/.vim
 mkdir $HOME/.vim
+
+# Link Vim color scheme.
 mkdir $HOME/.vim/colors
 ln -s $HOME/.dotfiles/vim/monokai.vim $HOME/.vim/colors/monokai.vim
+
+# Link C extended syntax file.
+mkdir $HOME/.vim/after
+mkdir $HOME/.vim/after/syntax
+ln -s $HOME/.dotfiles/vim/c.vim $HOME/.vim/after/syntax/c.vim
 
 # Install Vim plugins and copy snippets over.
 vim +PlugInstall +qall
