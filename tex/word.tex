@@ -1,0 +1,41 @@
+% One inch margins
+\usepackage[margin=1in]{geometry}
+
+% Times New Roman.
+\usepackage[T1]{fontenc}
+\usepackage{times}
+
+% Remove footnote indentation
+\usepackage[hang,flushmargin]{footmisc}
+
+% Remove page numbering.
+\pagenumbering{gobble}
+
+% Add extra blank line between paragraphs and indent paragraphs.
+\usepackage{indentfirst}
+\edef\restoreparindent{\the\parindent}
+\usepackage{parskip}
+\parindent=\restoreparindent\relax
+\parskip=1\baselineskip
+
+% Single spacing
+\usepackage{setspace}
+\setstretch{1}
+
+% Date time
+\usepackage[en-US]{datetime2}
+\DTMlangsetup{ord=raise}
+
+% Header
+\newcommand{\wordtitle}[2] {
+    \begin{flushleft}{#1}\\\today\end{flushleft}
+    \begin{center}{#2}\end{center}
+}
+
+% Add space between text and footnotes section
+\setlength{\skip\footins}{0in}
+
+% Add a space before the footnote mark
+\let\myfootnote\footnote
+\renewcommand{\footnote}[1]{\myfootnote{~#1}}
+
