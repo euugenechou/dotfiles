@@ -26,6 +26,7 @@ alias fuck="say -v Kyoko やばい"
 alias unix="ssh -t euchou@unix.ucsc.edu"
 alias grunhilda="ssh euchou@grunhilda.soe.ucsc.edu"
 alias remote="sshfs euchou@unix.ucsc.edu:/afs/cats.ucsc.edu/users/k/euchou ~/Timeshare"
+alias cse180="psql -h cse180-db.lt.ucsc.edu -U euchou"
 
 # Editor
 alias vi='vim'

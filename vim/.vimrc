@@ -136,6 +136,7 @@ set expandtab                           " Expand the tab
 set wrap                                " Wrap lines
 set cursorline
 set termguicolors
+set conceallevel=0
 match Error /\%81v.\+/                  " Error out text past column 80
 
 
@@ -227,3 +228,4 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 let g:indentLine_char = '▏'
+let g:tex_conceal = ''
