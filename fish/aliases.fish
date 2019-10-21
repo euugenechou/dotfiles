@@ -21,6 +21,7 @@ alias psqlstop="pg_ctl -D /usr/local/var/postgres stop"
 alias freebsd="ssh euchou@127.0.0.1 -p 6969"
 alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
 alias fuck="say -v Kyoko やばい"
+alias texspellcheck="aspell --lang=en --mode=tex check"
 
 # School
 alias unix="ssh -t euchou@unix.ucsc.edu"
