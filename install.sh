@@ -44,7 +44,7 @@ ln -s $HOME/.dotfiles/vim/c.vim $HOME/.vim/after/syntax/c.vim
 
 # Install Vim plugins and copy snippets over.
 vim +PlugInstall +qall
-rm -rf $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
-ln -s $HOME/.dotfiles/vim/c.snippets $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
+rm -rf $HOME/.vim/plugged/vim-snippets/UltiSnips/c.snippets
+ln -s $HOME/.dotfiles/vim/c.snippets $HOME/.vim/plugged/vim-snippets/UltiSnips/c.snippets
 
 echo "Restart terminal and switch to zsh shell to see changes."

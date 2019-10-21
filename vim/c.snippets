@@ -1,127 +1,145 @@
-snippet main
-	int main(int argc, char **argv) {
-		${0}
-		return 0;
-	}
-snippet mainn
-	int main(void) {
-		${0}
-		return 0;
-	}
-snippet inc
-	#include <${1:stdio}.h>
-snippet inch
-	#include "${1:`vim_snippets#Filename("$1.h")`}"
+# Eugene Chou (euchou@ucsc.edu)
+# Custom Textmate snippets for UltiSnips
+
+priority 1
+
+
 snippet def
-	#define ${0}
-snippet ifdef
-	#ifdef ${1:FOO}
-		${2:#define }
-	#endif
+#define ${1:symbol} ${2:value}
+endsnippet
+
+
 snippet ifndef
-	#ifndef ${1:FOO}
-		${2:#define }
-	#endif
-snippet guard
-	#ifndef ${0:`toupper(vim_snippets#Filename('__$1_H__', '__MODULE_H__'))`}
-	#define $0
+#ifndef $1
+#define ${1:symbol} ${2:value}
 
-	${1}
+$0
 
-	#endif
-snippet if
-	if (${1:/* condition */}) {
-		${2}
-	} ${3}
-snippet ife
-	if (${1:/* condition */}) {
-		${2}
-	} else {
-		${0}
-	}
-snippet el
-	else {
-		${0}
-	}
-snippet elif
-	else if (${1:/* condition */}) {
-		${2}
-	} ${3}
-snippet ter
-	${1:/* condition */} ? ${2:a} : ${3:b}
-snippet sw
-	switch (${1:/* variable */}) {
-	case ${2:/* condition */}:
-		${3}
-		break;
-	default:
-		${6}
-		break;
-	}
-snippet case
-	case ${1:/* variable case */}:
-		${2}
-		break;
-snippet ret
-	return ${0};
+#endif
+endsnippet
+
+
+snippet ifdef
+#ifdef  $1
+#define ${1:symbol} ${2:value}
+
+$0
+
+#endif
+endsnippet
+
+
+snippet main
+int main(int argc, char **argv) {
+	$0
+	return 0;
+}
+endsnippet
+
+
+snippet mainn
+int main(void) {
+	$0
+	return 0;
+}
+endsnippet
+
+
 snippet for
-	for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:++$2}) {
-		${5}
-	}
-snippet wh
-	while (${1:/* condition */}) {
-		${0}
-	}
-snippet do
-	do {
-		${0}
-	} while (${1:/* condition */});
-snippet fun
-	${1:void} ${2:function_name}(${3}) {
-		${4}
-	}
-snippet funn
-	${1:void} ${2:function_name}(void) {
-		${3}
-	}
-snippet fund
-	${1:void} ${2:function_name}(${3});
-snippet td
-	typedef ${1:/* original type */} ${2:/* custom type /*};
-snippet st
-	struct ${1:struct_name} {
-		${2}
-	};
-snippet tds
-	typedef struct ${1:struct_name} {
-		${3}
-	} ${2:$1};
-snippet getopt
-	int opt = 0;
+for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:++$2}) {
+	$0
+}
+endsnippet
 
-	while ((opt = getopt(argc, argv, ${1:/* options */})) != -1) {
-		switch (opt) {
-		case ${2:/* option case */}:
-			${3}
-			break;
-		default:
-			${4}
-			break;
-		}
-	}
-snippet pr
-	printf("${1:%s}\n"${2});
+
+snippet guard
+#ifndef ${1:`!p
+if not snip.c:
+	import string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	snip.rv = ('__%s__' % (name)).upper()
+else:
+	snip.rv = snip.c`}
+#define $1
+
+$0
+
+#endif
+endsnippet
+
+
 snippet fpr
-	fprintf(${1:stderr}, "${2:%s}\n"${3});
+fprintf(${1:stderr}, "${2:%s}\n", $3);
+endsnippet
+
+
 snippet prs
-	printf("${1:} = \"%s\"\n", $1);
+printf("${1:value} = \"%s\"\n", $1);
+endsnippet
+
+
 snippet prd
-	printf("${1:} = %d\n", $1);
-snippet prf
-	printf("${1:} = %f\n", $1);
+printf("${1:value} = %d\n", $1);
+endsnippet
+
+
+snippet prlf
+printf("${1:value} = %lf\n", $1);
+endsnippet
+
+
 snippet prld
-	printf("${1:} = %" PRId64 "\n", $1);
+printf("${1:value} = %" PRId64 "\n", $1);
+endsnippet
+
+
 snippet prlu
-	printf("${1:} = %" PRIu64 "\n", $1);
-snippet prr
-	printf("${1:} = %${2}\n", $1);
+printf("${1:value} = %" PRIu64 "\n", $1);
+endsnippet
+
+
+snippet st
+struct ${1:structname} {
+	$0
+};
+endsnippet
+
+
+snippet tds
+typedef struct ${1:structname} {
+	$0
+} $1;
+endsnippet
+
+
+snippet fun
+${1:void} ${2:function_name}($3) {
+	$0
+}
+endsnippet
+
+
+snippet proto
+${1:void} ${2:function_name}($3);
+endsnippet
+
+
+snippet if
+if (${1:/* condition */}) {
+	$2
+} $3
+endsnippet
+
+
+snippet elif
+else if (${1:/* condition */}) {
+	$2
+} $3
+endsnippet
+
+
+snippet el
+else {
+	$2
+} $3
+endsnippet
