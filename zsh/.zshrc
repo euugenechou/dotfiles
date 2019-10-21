@@ -30,3 +30,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom keybindings.
 bindkey '^F' autosuggest-accept
+
+# Cute "fortune".
+if test $(which fortune); then
+    fortune
+fi
