@@ -1,5 +1,5 @@
 # Set theme
-ZSH_THEME="yoink"
+ZSH_THEME="milktea"
 
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh

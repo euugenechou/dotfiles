@@ -14,9 +14,13 @@ ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
 # Install oh-my-zsh.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# Link milktea theme.
+rm -rf $HOME/.oh-my-zsh/themes/milktea.zsh-theme
+ln -s $HOME/.dotfiles/zsh/milktea.zsh-theme $HOME/.oh-my-zsh/themes/milktea.zsh-theme
+
 # Install Zsh plugins.
-git clone https://github.com/zsh-users/zsh-autosuggestions ${~/.dotfiles:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${~/.dotfiles:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${$HOME/.dotfiles/zsh:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git${$HOME/.dotfiles/zsh:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Link Vim config.
 rm -rf $HOME/.vimrc
