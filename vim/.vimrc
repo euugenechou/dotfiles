@@ -125,7 +125,7 @@ set t_vb=                               " Disable beeping
 set tm=500                              " Disable annoying sounds
 set hidden                              " Don't unload buffer
 set number                              " Line numbers
-set scrolloff=8                        " 10 lines above and below cursor
+set scrolloff=12                        " 12 lines above and below cursor
 set textwidth=80                        " Text width is 80
 set bs=2                                " Fix backspacing in insert mode
 set smartindent                         " Enable smart indent
@@ -171,8 +171,8 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'tpope/vim-abolish'
 Plug 'Townk/vim-autoclose'
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'neoclide/macdown.vim'
@@ -225,7 +225,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 let g:gitgutter_enabled = 0
 let g:lightline = { 'colorscheme':'wombat' }
 let g:python_highlight_all = 1
-let g:UltiSnipsSnippetDirectories = ['~/.vim/plugged/vim-snippets/snippets']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-v>"
