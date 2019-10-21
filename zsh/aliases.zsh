@@ -8,6 +8,7 @@ alias home='cd ~'
 alias la="ls -a"
 alias rm="rm -f"
 alias src="source ~/.zshrc"
+alias texspellcheck="aspell --lang=en --mode=tex check"
 
 # System
 alias clearlogs="sudo rm -f ~/private/var/log/asl/*.asl"
@@ -27,6 +28,7 @@ alias fuck="say -v Kyoko やばい"
 alias unix="ssh euchou@unix.ucsc.edu"
 alias remote="sshfs euchou@unix.ucsc.edu:/afs/cats.ucsc.edu/users/k/euchou/ ~/Timeshare"
 alias grunhilda="ssh euchou@grunhilda.soe.ucsc.edu"
+alias cse180="psql -h cse180-db.lt.ucsc.edu -U euchou"
 
 # Editor
 alias vi='vim'
