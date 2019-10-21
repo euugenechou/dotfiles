@@ -67,6 +67,7 @@ map <C-F> <Esc>:next<CR>
 map <C-A> <Esc>:prev<CR>
 map <C-T> <Esc>:NERDTreeToggle<CR>
 map <C-G> <Esc>:GitGutterToggle<CR>
+inoremap (<CR> (<CR>)<ESC>O
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 nnoremap <esc><esc> :noh<return>
@@ -149,6 +150,7 @@ au FileType cpp setl sw=2 sts=2 tw=80 et
 au FileType python setl sw=4 sts=4 tw=80 et
 au FileType javascript setl sw=2 sts=2 tw=80 et
 au FileType html setl sw=2 sts=2 tw=80 et
+au FileType sql setl sw=2 sts=2 tw=80 et
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -228,4 +230,4 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 let g:indentLine_char = '▏'
-let g:tex_conceal = ''
+let g:tex_conceal=''

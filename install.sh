@@ -7,6 +7,17 @@ if test ! $(which zsh); then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+# Link Zsh config.
+rm -rf $HOME/.zshrc
+ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+
+# Install oh-my-zsh.
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Install Zsh plugins.
+git clone https://github.com/zsh-users/zsh-autosuggestions ${~/.dotfiles:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${~/.dotfiles:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # Link Vim config.
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
@@ -30,3 +41,4 @@ rm -rf $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
 ln -s $HOME/.dotfiles/vim/c.snippets $HOME/.vim/plugged/vim-snippets/snippets/c.snippets
 
 echo "done!"
+echo "Restart terminal and switch to zsh shell to see changes."

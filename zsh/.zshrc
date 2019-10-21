@@ -15,18 +15,10 @@ export LANG="$LC_ALL"
 export TERM=xterm-256color
 
 # Set editor for local/remote
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='mvim'
-fi
-
-# Environment variables
-# export DB_USER=Eugene
-# export DB_NAME=nightmarket
+export EDITOR='vim'
 
 # Plugins
-plugins=(zsh-syntax-highlighting vi-mode)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions vi-mode)
 
 # Automatically update oh-my-zsh
 export UPDATE_ZSH_DAYS=14
@@ -35,3 +27,6 @@ export UPDATE_ZSH_DAYS=14
 ZSH_CUSTOM=$DOTFILES/zsh
 
 source $ZSH/oh-my-zsh.sh
+
+# Custom keybindings.
+bindkey '^F' autosuggest-accept
