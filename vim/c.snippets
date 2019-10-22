@@ -62,7 +62,6 @@ snippet for
 for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:++$2}) {
 	$5
 }
-$6
 endsnippet
 
 
@@ -70,7 +69,6 @@ snippet wh
 while (${1:/* condition */}) {
 	$2
 }
-$3
 endsnippet
 
 
@@ -78,7 +76,6 @@ snippet do
 do {
 	$2
 } while (${1:/* condition */});
-$3
 endsnippet
 
 
@@ -96,6 +93,50 @@ $0
 
 #endif
 endsnippet
+
+
+global !p
+def adtname():
+	return snip.basename.capitalize()
+def funcname():
+	return snip.basename
+def adtobj():
+	return snip.basename[0]
+endglobal
+
+snippet adt
+${1:`!p snip.rv = adtname()`} *${2:`!p snip.rv = funcname()`}_create(void) {
+	$3
+}
+
+void $2_delete($1 *`!p snip.rv = adtobj()`) {
+	$4
+}
+endsnippet
+
+snippet adth
+#ifndef ${1:`!p
+if not snip.c:
+	import string
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	snip.rv = ('__%s__' % (name)).upper()
+else:
+	snip.rv = snip.c`}
+#define $1
+
+typedef struct ${2:`!p snip.rv = adtname()`} $2;
+
+struct $2 {
+	$3
+};
+
+${4:`!p snip.rv = adtname()`} *${5:`!p snip.rv = funcname()`}_create(void);
+
+void $5_delete($4 *`!p snip.rv = adtobj()`);
+
+#endif
+endsnippet
+
 
 
 snippet fpr
@@ -142,6 +183,11 @@ typedef struct ${1:structname} {
 endsnippet
 
 
+snippet td
+typedef ${1:oldtype} ${2:newtype};
+endsnippet
+
+
 snippet fun
 ${1:void} ${2:function_name}($3) {
 	$0
@@ -172,4 +218,17 @@ snippet el
 else {
 	$2
 } $3
+endsnippet
+
+
+snippet sw
+switch {
+case ${1:/* condition */}:
+	$2
+}
+endsnippet
+
+snippet case
+case ${1:/* condition */}:
+	$2
 endsnippet
