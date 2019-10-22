@@ -29,6 +29,19 @@ $0
 endsnippet
 
 
+snippet inc
+#include <${1:stdio}.h>
+endsnippet
+
+snippet inch
+#include "${1:`!p
+if not snip.c:
+	snip.rv = snip.basename
+else:
+	snip.rv = snip.c`}.h"
+endsnippet
+
+
 snippet main
 int main(int argc, char **argv) {
 	$0
@@ -47,8 +60,25 @@ endsnippet
 
 snippet for
 for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:++$2}) {
-	$0
+	$5
 }
+$6
+endsnippet
+
+
+snippet wh
+while (${1:/* condition */}) {
+	$2
+}
+$3
+endsnippet
+
+
+snippet do
+do {
+	$2
+} while (${1:/* condition */});
+$3
 endsnippet
 
 
