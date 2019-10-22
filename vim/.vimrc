@@ -231,3 +231,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 let g:indentLine_char = '▏'
 let g:tex_conceal=''
 let g:SuperTabCrMapping=1
+let g:SuperTabDefaultCompletionType = "<c-n>"
