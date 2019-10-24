@@ -22,8 +22,6 @@
 # inspired by Michele Bologna's theme
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/michelebologna.zsh-theme
 
-
-
 local red="%{$fg_bold[red]%}"
 local orange="$FG[202]"
 local yellow="$FG[214]"
@@ -46,7 +44,7 @@ hostname_color=$yellow
 local current_dir_color=$green
 local username_command="%n"
 local hostname_command="%m"
-local current_dir="%~"
+local current_dir="%2~"
 
 local username_output="$username_color$username_command$white at "
 local hostname_output="$hostname_color$hostname_command$white in "
@@ -69,6 +67,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="$blue<>"
 nl=$'\n%{\r%}';
 
 PROMPT='$username_output$hostname_output$current_dir_output%1(j. [$jobs_bg].)'
+
 GIT_PROMPT='$(out=$(git_prompt_info);if [[ -n $out ]]; then printf %s "$white on $purple$out$blue [$(git_prompt_status)$(git_remote_status)$blue] $reset";fi)'
 PROMPT+="$GIT_PROMPT"
 PROMPT+='$nl'

@@ -43091,7 +43091,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 216 592 584 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>39 30 1202 741 0 0 1920 1080 </string>
+	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 250 650 552 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -43710,7 +43710,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Regular 13</string>
+			<string>FiraCode-Retina 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -43825,12 +43825,16 @@
 		<string>3.3.20190829-nightly</string>
 		<string>3.3.4</string>
 	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Fira Code</string>
+	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1280, 800}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{183, 676}</string>
+		<string>{557, 886}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -43841,7 +43845,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>58C8791B-678A-49FB-8452-F388569ADC1A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>126</integer>
+	<integer>131</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -44644,7 +44648,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-19T23:01:33Z</date>
+	<date>2019-10-23T02:26:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
