@@ -1,30 +1,32 @@
 # Functions
 
-function spacetonewline () {
+function spacetonewline()
+{
     perl -pe 's/ /\n/g' "$1" >> "$2";
     rm -f "$1";
 }
 
-function rmd () {
+function rmd()
+{
     pandoc $1 | lynx -stdin
 }
 
-function mkcd ()
+function mkcd()
 {
     mkdir -p "$@" && cd "$@";
 }
 
-function rmextension ()
+function rmextension()
 {
     find . -name "*.$@" -type f -delete;
 }
 
-function up ()
+function up()
 {
   cd $(printf "%0.s../" $(seq 1 $1 ));
 }
 
-function myip ()
+function myip()
 {
     ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
     ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
@@ -33,9 +35,14 @@ function myip ()
     ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
 }
 
-function mkvirtualenvpy3 ()
+function mkvirtualenvpy3()
 {
     python3 -m venv .
     source bin/activate
 }
 
+function chpwd()
+{
+    emulate -L zsh
+    ls -a
+}
