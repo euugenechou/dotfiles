@@ -94,10 +94,17 @@ nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
 nnoremap d* /\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgn
 nnoremap d# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgN
 nnoremap <leader>x* :%s/\<<C-r>=expand('<cword>')<CR>\>//g<CR>
+nnoremap <leader>+ 10<C-W>+<CR>
+nnoremap <leader>- 10<C-W>-<CR>
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+nmap <leader>g :Goyo<CR>
+nmap <leader>l :Limelight!!<CR>
+nmap <leader>p :TogglePencil<CR>
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 autocmd BufWritePre * :%s/\s\+$//e
 
 
@@ -125,7 +132,7 @@ set t_vb=                               " Disable beeping
 set tm=500                              " Disable annoying sounds
 set hidden                              " Don't unload buffer
 set number                              " Line numbers
-set scrolloff=12                        " 12 lines above and below cursor
+set scrolloff=8                         " 8 lines above and below cursor
 set textwidth=80                        " Text width is 80
 set bs=2                                " Fix backspacing in insert mode
 set smartindent                         " Enable smart indent
@@ -138,6 +145,7 @@ set wrap                                " Wrap lines
 set cursorline
 set termguicolors
 set conceallevel=0
+set splitright
 match Error /\%81v.\+/                  " Error out text past column 80
 
 
@@ -181,6 +189,9 @@ Plug 'vim-python/python-syntax'
 Plug 'dag/vim-fish'
 Plug 'calincru/flex-bison-syntax'
 Plug 'lervag/vimtex'
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-pencil'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -232,3 +243,8 @@ let g:indentLine_char = '▏'
 let g:tex_conceal=''
 let g:SuperTabCrMapping=1
 let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:goyo_width='56%'
+let g:goyo_height='95%'
+let g:limelight_paragraph_span=1
+let g:pencil#wrapModeDefault='hard'
+let g:pencil#autoformat=1

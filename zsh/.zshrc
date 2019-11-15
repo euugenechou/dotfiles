@@ -32,6 +32,10 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^F' autosuggest-accept
 
 # Cute "fortune".
-if test $(which fortune); then
-    fortune
+if [ -x "$(command -v fortune)" > /dev/null 2>&1 ]; then
+    if [ -x "$(command -v cowsay)" > /dev/null 2>&1 ]; then
+        fortune | cowsay
+    else
+        fortune
+    fi
 fi
