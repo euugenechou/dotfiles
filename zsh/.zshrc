@@ -34,8 +34,8 @@ bindkey '^F' autosuggest-accept
 # Cute "fortune".
 if [ -x "$(command -v fortune)" > /dev/null 2>&1 ]; then
     if [ -x "$(command -v cowsay)" > /dev/null 2>&1 ]; then
-        fortune | cowsay
+        fortune -s | cowsay -f neo
     else
-        fortune
+        fortune -s
     fi
 fi

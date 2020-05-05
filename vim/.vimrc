@@ -1,4 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " Author:
 "   Eugene Chou (euchou@ucsc.edu)
 "
@@ -63,8 +64,8 @@ nnoremap <leader>tw <Esc>:wa<CR>
 nnoremap <leader>tt <Esc>:term<CR>
 noremap cp yap<S-}>p
 noremap <leader>a =ip
-map <C-F> <Esc>:next<CR>
-map <C-A> <Esc>:prev<CR>
+map <leader>a <Esc>:prev<CR>
+map <leader>f <Esc>:next<CR>
 map <C-T> <Esc>:NERDTreeToggle<CR>
 map <C-G> <Esc>:GitGutterToggle<CR>
 inoremap (<CR> (<CR>)<ESC>O
@@ -96,16 +97,16 @@ nnoremap d# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgN
 nnoremap <leader>x* :%s/\<<C-r>=expand('<cword>')<CR>\>//g<CR>
 nnoremap <leader>+ 10<C-W>+<CR>
 nnoremap <leader>- 10<C-W>-<CR>
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 nmap <leader>g :Goyo<CR>
 nmap <leader>l :Limelight!!<CR>
 nmap <leader>p :TogglePencil<CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-autocmd BufWritePre * :%s/\s\+$//e
+
+augroup prewrites
+    autocmd!
+    autocmd BufWritePre,FileWritePre * :%s/\s\+$//e | %s/\r$//e
+augroup END
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,7 +156,9 @@ match Error /\%81v.\+/                  " Error out text past column 80
 
 au FileType c setl sw=2 sts=2 tw=80 et
 au FileType cpp setl sw=2 sts=2 tw=80 et
+au FileType tex setl sw=4 sts=4 tw=80 et
 au FileType python setl sw=4 sts=4 tw=80 et
+au FileType julia setl sw=4 sts=4 tw=80 et
 au FileType javascript setl sw=2 sts=2 tw=80 et
 au FileType html setl sw=2 sts=2 tw=80 et
 au FileType sql setl sw=2 sts=2 tw=80 et
@@ -172,26 +175,18 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'airblade/vim-gitgutter'
-Plug 'jeetsukumaran/vim-indentwise'
 Plug 'tpope/vim-abolish'
 Plug 'Townk/vim-autoclose'
 Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'neoclide/macdown.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-python/python-syntax'
-Plug 'dag/vim-fish'
-Plug 'calincru/flex-bison-syntax'
 Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
-Plug 'reedes/vim-pencil'
 Plug 'junegunn/limelight.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 call plug#end()
 filetype plugin indent on
@@ -224,15 +219,6 @@ set noswapfile                          " No swap file
 set rtp+=/usr/local/opt/fzf
 let NERDTreeIgnore = ['\.pyc$', '\~$'] "ignore files in NERDTree
 let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = 'µ'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'gµ'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
 let g:gitgutter_enabled = 0
 let g:lightline = { 'colorscheme':'wombat' }
 let g:python_highlight_all = 1

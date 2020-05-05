@@ -8,27 +8,18 @@ alias home='cd ~'
 alias la="ls -a"
 alias rm="rm -f"
 alias src="source ~/.zshrc"
-alias texspellcheck="aspell --lang=en --mode=tex check"
 
 # System
 alias clearlogs="sudo rm -f ~/private/var/log/asl/*.asl"
 alias finder="open -a Finder"
 
-# PostgreSQL
-alias psqlstart="pg_ctl -D /usr/local/var/postgres start"
-alias psqlstop="pg_ctl -D /usr/local/var/postgres stop"
-
 # Miscallaneous
-alias flactoalac="for f in ./*.flac; do ffmpeg -i "$f" -c:a alac "${f%.*}.m4a"; done"
 alias freebsd="ssh euchou@127.0.0.1 -p2222"
 alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
-alias fuck="say -v Kyoko やばい"
+alias texspellcheck="aspell --lang=en --mode=tex check"
 
 # School
 alias unix="ssh euchou@unix.ucsc.edu"
-alias remote="sshfs euchou@unix.ucsc.edu:/afs/cats.ucsc.edu/users/k/euchou/ ~/Timeshare"
-alias grunhilda="ssh euchou@grunhilda.soe.ucsc.edu"
-alias cse180="psql -h cse180-db.lt.ucsc.edu -U euchou"
 
 # Editor
 alias vi='vim'
