@@ -3,51 +3,72 @@
 
 priority 1
 
+##
+## Inttypes
+##
+
+snippet d8
+int8_t
+endsnippet
+
+snippet d16
+int16_t
+endsnippet
+
+snippet d32
+int32_t
+endsnippet
+
+snippet d64
+int64_t
+endsnippet
 
 snippet u8
-uint8_t ${1:x} = ${2:0};
+uint8_t
 endsnippet
-
 
 snippet u16
-uint16_t ${1:x} = ${2:0};
+uint16_t
 endsnippet
-
 
 snippet u32
-uint32_t ${1:x} = ${2:0};
+uint32_t
 endsnippet
-
 
 snippet u64
-uint64_t ${1:x} = ${2:0};
+uint64_t
 endsnippet
 
+##
+## Defines
+##
 
 snippet def
 #define ${1:symbol} ${2:value}
 endsnippet
 
-
 snippet ifndef
 #ifndef $1
 #define ${1:symbol} ${2:value}
 
-$0
+$3
 
 #endif
 endsnippet
-
 
 snippet ifdef
 #ifdef  $1
 #define ${1:symbol} ${2:value}
 
-$0
+$3
 
 #endif
 endsnippet
 
+
+##
+## Includes
+##
 
 snippet inc
 #include <${1:stdio}.h>
@@ -62,42 +83,57 @@ else:
 endsnippet
 
 
+##
+## Main
+##
+
 snippet main
 int main(int argc, char **argv) {
-	$0
+	$1
 	return 0;
 }
 endsnippet
-
 
 snippet mainn
 int main(void) {
-	$0
+	$1
 	return 0;
 }
 endsnippet
 
 
+##
+## Iteration
+##
+
 snippet for
-for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:++$2}) {
-	$5
+for (${1:int} ${2:i} = 0; $2 < ${3:count}; $2 ${4:+=} ${5:1}) {
+	$6
 }
 endsnippet
 
+snippet forinf
+for (;;) {
+	$1
+}
+endsnippet
 
 snippet wh
-while (${1:/* condition */}) {
+while (${1:condition}) {
 	$2
 }
 endsnippet
-
 
 snippet do
 do {
 	$2
-} while (${1:/* condition */});
+} while (${1:condition});
 endsnippet
 
+
+##
+## Header guard
+##
 
 snippet guard
 #ifndef ${1:`!p
@@ -115,13 +151,19 @@ $0
 endsnippet
 
 
+##
+## ADTs
+##
+
 global !p
+
 def adtname():
 	return snip.basename.capitalize()
 def funcname():
 	return snip.basename
 def adtobj():
 	return snip.basename[0]
+
 endglobal
 
 snippet adt
@@ -165,81 +207,86 @@ void $5_delete($4 *`!p snip.rv = adtobj()`);
 endsnippet
 
 
+##
+## Printing
+##
 
 snippet fpr
 fprintf(${1:stderr}, "${2:%s}\n", $3);
 endsnippet
 
-
 snippet prs
 printf("${1:value} = \"%s\"\n", $1);
 endsnippet
-
 
 snippet prd
 printf("${1:value} = %d\n", $1);
 endsnippet
 
-
 snippet prlf
 printf("${1:value} = %lf\n", $1);
 endsnippet
 
-
 snippet prld
 printf("${1:value} = %" PRId64 "\n", $1);
 endsnippet
-
 
 snippet prlu
 printf("${1:value} = %" PRIu64 "\n", $1);
 endsnippet
 
 
+##
+## Structs and typedefs
+##
+
 snippet st
 struct ${1:structname} {
-	$0
+	$2
 };
 endsnippet
 
-
 snippet tds
 typedef struct ${1:structname} {
-	$0
+	$2
 } $1;
 endsnippet
-
 
 snippet td
 typedef ${1:oldtype} ${2:newtype};
 endsnippet
 
 
+##
+## Functions
+##
+
 snippet fun
 ${1:void} ${2:function_name}($3) {
-	$0
+	$4
 }
 endsnippet
-
 
 snippet proto
 ${1:void} ${2:function_name}($3);
 endsnippet
 
 
+##
+## Conditionals
+##
+
 snippet if
-if (${1:/* condition */}) {
+if (${1:condition}) {
 	$2
 } $3
 endsnippet
-
 
 snippet elif
-else if (${1:/* condition */}) {
+else if (${1:condition}) {
 	$2
 } $3
 endsnippet
-
 
 snippet el
 else {
@@ -247,15 +294,14 @@ else {
 } $3
 endsnippet
 
-
 snippet sw
 switch {
-case ${1:/* condition */}:
+case ${1:condition}:
 	$2
 }
 endsnippet
 
 snippet case
-case ${1:/* condition */}:
+case ${1:condition}:
 	$2
 endsnippet

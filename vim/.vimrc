@@ -97,10 +97,11 @@ nnoremap d# ?\<<C-r>=expand('<cword>')<CR>\>\C<CR>``dgN
 nnoremap <leader>x* :%s/\<<C-r>=expand('<cword>')<CR>\>//g<CR>
 nnoremap <leader>+ 10<C-W>+<CR>
 nnoremap <leader>- 10<C-W>-<CR>
+nnoremap <leader>m :make!<CR>
 nmap <leader>g :Goyo<CR>
 nmap <leader>l :Limelight!!<CR>
 nmap <leader>p :TogglePencil<CR>
-autocmd! User GoyoEnter Limelight
+
 autocmd! User GoyoLeave Limelight!
 
 augroup prewrites
@@ -217,20 +218,20 @@ set noswapfile                          " No swap file
 "                                 Miscellaneous
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=/usr/local/opt/fzf
-let NERDTreeIgnore = ['\.pyc$', '\~$'] "ignore files in NERDTree
-let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:gitgutter_enabled = 0
-let g:lightline = { 'colorscheme':'wombat' }
-let g:python_highlight_all = 1
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let g:NERDTreeNodeDelimiter="\u00a0"
+let g:NERDTreeQuitOnOpen=1
+let g:gitgutter_enabled=0
+let g:lightline={ 'colorscheme':'wombat' }
+let g:python_highlight_all=1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 let g:indentLine_char = '▏'
 let g:tex_conceal=''
-let g:SuperTabCrMapping=1
+let g:SuperTabCrMapping=0
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:goyo_width=80
 let g:goyo_height='90%'
-let g:limelight_paragraph_span=1
-let g:pencil#wrapModeDefault='hard'
-let g:pencil#autoformat=1
+let g:goyo_linenr=1
+let g:limelight_paragraph_span=0

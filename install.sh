@@ -37,14 +37,16 @@ mkdir $HOME/.vim
 mkdir $HOME/.vim/colors
 ln -s $HOME/.dotfiles/vim/monokai.vim $HOME/.vim/colors/monokai.vim
 
-# Link C extended syntax file.
+# Link C and C++  extended syntax file.
 mkdir $HOME/.vim/after
 mkdir $HOME/.vim/after/syntax
 ln -s $HOME/.dotfiles/vim/c.vim $HOME/.vim/after/syntax/c.vim
+ln -s $HOME/.dotfiles/vim/cpp.vim $HOME/.vim/after/syntax/cpp.vim
 
 # Install Vim plugins and copy snippets over.
 vim +PlugInstall +qall
 rm -rf $HOME/.vim/plugged/vim-snippets/UltiSnips/c.snippets
 ln -s $HOME/.dotfiles/vim/c.snippets $HOME/.vim/plugged/vim-snippets/UltiSnips/c.snippets
+ln -s $HOME/.dotfiles/vim/cpp.snippets $HOME/.vim/plugged/vim-snippets/UltiSnips/cpp.snippets
 
 echo "Restart terminal and switch to zsh shell to see changes."
