@@ -17,27 +17,31 @@ endsnippet
 ## STL Containers
 ##
 
-snippet istream
+snippet std "" i
+std::
+endsnippet
+
+snippet istream "" i
 std::istream
 endsnippet
 
-snippet ostream
+snippet ostream "" i
 std::ostream
 endsnippet
 
-snippet string
+snippet string "" i
 std::string
 endsnippet
 
-snippet sstream
+snippet sstream "" i
 std::stringstream
 endsnippet
 
-snippet isstream
+snippet isstream "" i
 std::istringstream
 endsnippet
 
-snippet osstream
+snippet osstream "" i
 std::ostringstream
 endsnippet
 
@@ -121,7 +125,7 @@ snippet pqueue
 std::priority_queue<${1:T}> ${2:q};
 endsnippet
 
-snippet op
+snippet op "" i
 operator
 endsnippet
 
@@ -151,20 +155,20 @@ endsnippet
 ## Casts
 ##
 
-snippet sca
-static_cast<${1:T}>(${2:expr});
+snippet sca "" i
+static_cast<${1:T}>(${2:expr})
 endsnippet
 
-snippet dca
-dynamic_cast<${1:T}>(${2:expr});
+snippet dca "" i
+dynamic_cast<${1:T}>(${2:expr})
 endsnippet
 
-snippet rca
-reinterpret_cast<${1:T}>(${2:expr});
+snippet rca "" i
+reinterpret_cast<${1:T}>(${2:expr})
 endsnippet
 
-snippet cca
-const_cast<${1:T}>(${2:expr});
+snippet cca "" i
+const_cast<${1:T}>(${2:expr})
 endsnippet
 
 
