@@ -7,35 +7,35 @@ priority 1
 ## Inttypes
 ##
 
-snippet d8
+snippet d8 "" i
 int8_t
 endsnippet
 
-snippet d16
+snippet d16 "" i
 int16_t
 endsnippet
 
-snippet d32
+snippet d32 "" i
 int32_t
 endsnippet
 
-snippet d64
+snippet d64 "" i
 int64_t
 endsnippet
 
-snippet u8
+snippet u8 "" i
 uint8_t
 endsnippet
 
-snippet u16
+snippet u16 "" i
 uint16_t
 endsnippet
 
-snippet u32
+snippet u32 "" i
 uint32_t
 endsnippet
 
-snippet u64
+snippet u64 "" i
 uint64_t
 endsnippet
 
@@ -167,12 +167,10 @@ def adtobj():
 endglobal
 
 snippet adt
-#include <assert.h>
 #include <stdlib.h>
 
 ${1:`!p snip.rv = adtname()`} *${2:`!p snip.rv = funcname()`}_create(void) {
 	$1 *${3:`!p snip.rv = adtobj()`} = ($1 *)malloc(sizeof($1));
-	assert($3);
 	$4
 	return $3;
 }
