@@ -100,7 +100,6 @@ nnoremap <leader>- 10<C-W>-<CR>
 nnoremap <leader>m :make!<CR>
 nmap <leader>g :Goyo<CR>
 nmap <leader>l :Limelight!!<CR>
-nmap <leader>p :TogglePencil<CR>
 
 autocmd! User GoyoLeave Limelight!
 
@@ -157,7 +156,7 @@ match Error /\%81v.\+/                  " Error out text past column 80
 
 au FileType c setl sw=2 sts=2 tw=80 et
 au FileType cpp setl sw=2 sts=2 tw=80 et
-au FileType tex setl sw=4 sts=4 tw=80 et
+au FileType tex setl sw=2 sts=2 tw=80 et
 au FileType python setl sw=4 sts=4 tw=80 et
 au FileType julia setl sw=4 sts=4 tw=80 et
 au FileType javascript setl sw=2 sts=2 tw=80 et
@@ -188,6 +187,7 @@ Plug 'lervag/vimtex'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 filetype plugin indent on
@@ -217,7 +217,6 @@ set noswapfile                          " No swap file
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Miscellaneous
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=/usr/local/opt/fzf
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let g:NERDTreeNodeDelimiter="\u00a0"
 let g:NERDTreeQuitOnOpen=1
