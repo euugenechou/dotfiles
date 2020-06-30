@@ -139,8 +139,8 @@ set bs=2                                " Fix backspacing in insert mode
 set smartindent                         " Enable smart indent
 set relativenumber                      " Enable relative line numbers
 set ruler
-set shiftwidth=4                        " Enable shift width in 4 spaces
-set tabstop=4                           " Tab is 4 spaces
+set shiftwidth=2                        " Enable shift width in 4 spaces
+set tabstop=2                           " Tab is 4 spaces
 set expandtab                           " Expand the tab
 set wrap                                " Wrap lines
 set cursorline
@@ -149,19 +149,6 @@ set conceallevel=0
 set splitright
 match Error /\%81v.\+/                  " Error out text past column 80
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                  Filetypes
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-au FileType c setl sw=2 sts=2 tw=80 et
-au FileType cpp setl sw=2 sts=2 tw=80 et
-au FileType tex setl sw=2 sts=2 tw=80 et
-au FileType python setl sw=4 sts=4 tw=80 et
-au FileType julia setl sw=4 sts=4 tw=80 et
-au FileType javascript setl sw=2 sts=2 tw=80 et
-au FileType html setl sw=2 sts=2 tw=80 et
-au FileType sql setl sw=2 sts=2 tw=80 et
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -188,6 +175,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'gisraptor/vim-lilypond-integrator'
+Plug 'rust-lang/rust.vim'
+Plug 'vim/killersheep'
 
 call plug#end()
 filetype plugin indent on
@@ -196,6 +186,21 @@ if vim_plug_just_installed
     echo "Installing Plugins, please ignore key map error messages"
     :PlugInstall
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  Filetypes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+au FileType c setl sw=2 sts=2 tw=80 et commentstring=//\ %s
+au FileType cpp setl sw=2 sts=2 tw=80 et commentstring=//\ %s
+au FileType tex setl sw=2 sts=2 tw=80 et
+au FileType python setl sw=4 sts=4 tw=80 et
+au FileType julia setl sw=4 sts=4 tw=80 et
+au FileType javascript setl sw=2 sts=2 tw=80 et
+au FileType html setl sw=2 sts=2 tw=80 et
+au FileType sql setl sw=2 sts=2 tw=80 et
+au FileType lilypond setl sw=2 sts=2 tw=100 et commentstring=%\ %s
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                    Colors

@@ -273,4 +273,3 @@ syn keyword cBoolean true false TRUE FALSE
 hi def link cFunction Function
 hi def link cIdentifier Identifier
 hi def link cBoolean Boolean
-

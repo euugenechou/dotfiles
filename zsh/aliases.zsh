@@ -13,9 +13,9 @@ alias code="cd ~/Documents/Code"
 # System
 alias clearlogs="sudo rm -f ~/private/var/log/asl/*.asl"
 alias finder="open -a Finder"
+alias safari="open -a Safari"
 
 # Miscallaneous
-alias freebsd="ssh euchou@127.0.0.1 -p2222"
 alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
 alias texspellcheck="aspell --lang=en --mode=tex check"
 
