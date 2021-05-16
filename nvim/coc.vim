@@ -47,8 +47,8 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
-nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
+nnoremap <expr><C-v> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+nnoremap <expr><C-n> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 
 
 

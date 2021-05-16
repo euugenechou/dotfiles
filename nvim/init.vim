@@ -31,6 +31,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'mlr-msft/vim-loves-dafny'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -148,6 +149,11 @@ map <leader>l :ALEToggle<cr>
 
 " Toggle Goyo.
 map <leader>g :Goyo<cr>
+
+" FZF.
+nmap <c-f> :Files<cr>
+nmap <c-g> :Rg<cr>
+nmap <c-b> :Buffers<cr>
 
 " Clear last used command (force a redraw).
 augroup cmdline
@@ -270,38 +276,15 @@ let g:go_fmt_fail_silently = 1
 " clang-format
 let g:clang_format#auto_format = 1
 let g:clang_format#style_options = {
-  \   "BasedOnStyle": "WebKit",
+  \   "BasedOnStyle": "LLVM",
   \   "IndentWidth": 4,
-  \   "Language": "Cpp",
-  \   "AlignConsecutiveMacros": "true",
-  \   "AlignEscapedNewlines": "Left",
-  \   "AlignOperands": "true",
-  \   "AlignTrailingComments": "true",
-  \   "AllowShortBlocksOnASingleLine": "Never",
-  \   "AllowShortEnumsOnASingleLine": "true",
-  \   "AllowShortCaseLabelsOnASingleLine": "false",
-  \   "AllowShortFunctionsOnASingleLine": "None",
-  \   "AllowShortIfStatementsOnASingleLine": "Never",
-  \   "BreakBeforeBraces": "Attach",
-  \   "ColumnLimit": 100,
-  \   "IncludeBlocks": "Regroup",
-  \   "IndentCaseLabels": "false",
-  \   "IndentWrappedFunctionNames": "true",
-  \   "KeepEmptyLinesAtTheStartOfBlocks": "false",
-  \   "PointerAlignment": "Right",
-  \   "ReflowComments": "false",
-  \   "SortIncludes": "false",
-  \   "SpaceAfterCStyleCast": "false",
-  \   "SpaceAfterLogicalNot": "false",
-  \   "SpaceBeforeAssignmentOperators": "true",
-  \   "SpaceAfterControlStatementKeyword": "true",
-  \   "SpaceBeforeCpp11BracedList": "true"
   \ }
 
 " FZF
 let $BAT_THEME='Monokai Extended Bright'
 let $FZF_DEFAULT_OPTS='--layout=reverse -m'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
 
 "
