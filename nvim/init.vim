@@ -23,7 +23,6 @@ Plug 'gisraptor/vim-lilypond-integrator'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
@@ -62,7 +61,7 @@ autocmd VimEnter *
 "
 
 " Key to start custom mappings with.
-let mapleader=","
+let mapleader=" "
 
 " Only write.
 nnoremap <leader>w <esc>:w<cr>
@@ -73,23 +72,14 @@ nnoremap <leader>s <esc>:x<cr>
 " Quit without writing.
 nnoremap <leader>q <esc>:q!<cr>
 
-" Quit without saving any tabs.
-nnoremap <leader>tq <esc>:qa!<cr>
-
-" Write all tabs and quit.
-nnoremap <leader>ts <esc>:wqa<cr>
-
-" Write all tabs.
-nnoremap <leader>tw <esc>:wa<cr>
-
 " Copy and paste paragraph.
 noremap cp yap<S-}>p
 
 " Cycle to previous file.
-map <leader>a <esc>:prev<cr>
+map [a <esc>:prev<cr>
 
 " Cycle to next file.
-map <leader>f <esc>:next<cr>
+map ]a <esc>:next<cr>
 
 " Insert open/closing parentheses, then enter insert mode in-between.
 inoremap (<cr> (<cr>)<esc>O
@@ -107,16 +97,16 @@ nnoremap <leader>h :noh<cr>
 nnoremap <space><space> i<space><esc>
 
 " Move current line down.
-nnoremap <c-j> :m .+1<cr>==
-inoremap <c-j> <Esc>:m .+1<cr>==gi
-vnoremap <c-j> :m '>+1<cr>gv=gv
-xnoremap <c-j> :move'>+<cr>gv
+nnoremap <silent> <c-j> :m .+1<cr>==
+inoremap <silent> <c-j> <Esc>:m .+1<cr>==gi
+vnoremap <silent> <c-j> :m '>+1<cr>gv=gv
+xnoremap <silent> <c-j> :move'>+<cr>gv
 
 " Move current line up.
-nnoremap <c-k> :m .-2<cr>==
-inoremap <c-k> <Esc>:m .-2<cr>==gi
-vnoremap <c-k> :m '<-2<cr>gv=gv
-xnoremap <c-k> :move-2<cr>gv
+nnoremap <silent> <c-k> :m .-2<cr>==
+inoremap <silent> <c-k> <Esc>:m .-2<cr>==gi
+vnoremap <silent> <c-k> :m '<-2<cr>gv=gv
+xnoremap <silent> <c-k> :move-2<cr>gv
 
 " Unindent line.
 nnoremap <c-h> <<
@@ -158,37 +148,6 @@ map <leader>l :ALEToggle<cr>
 
 " Toggle Goyo.
 map <leader>g :Goyo<cr>
-
-" Toggle LimeLight.
-nmap <leader>j :Limelight!!<cr>
-
-" Toggle clang-format.
-nmap <leader>c :ClangFormatAutoToggle<cr>
-
-" FZF
-nmap <c-t> :Files<cr>
-
-
-"
-" Quality of life.
-"
-
-" Trim whitespace and add newline on write.
-augroup prewrites
-  autocmd!
-  autocmd BufWritePre,FileWritePre * :%s/\s\+$//e | %s/\r$//e
-augroup END
-
-" Disable comments on next line.
-" augroup prereads
-"   autocmd!
-"   autocmd BufNewFile,BufWinEnter,BufRead * setl formatoptions-=c
-"   autocmd BufNewFile,BufWinEnter,BufRead * setl formatoptions-=r
-"   autocmd BufNewFile,BufWinEnter,BufRead * setl formatoptions-=o
-"   autocmd BufNewFile,BufWinEnter,BufRead * setl conceallevel=0
-"   autocmd BufNewFile,BufWinEnter,BufRead *.arl set filetype=ariel
-"   autocmd BufNewFile,BufWinEnter,BufRead *.arl setl syntax=cpp
-" augroup END
 
 " Clear last used command (force a redraw).
 augroup cmdline
@@ -350,6 +309,7 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 "
 
 syntax on
+let g:sonokai_transparent_background = 1
 colorscheme sonokai
 
 
