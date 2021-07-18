@@ -7,14 +7,14 @@ if test ! $(which zsh); then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+# Install oh-my-zsh if it doesn't yet exist.
+if ! test -d "$HOME/.oh-my-zsh"; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
 # Link Zsh config.
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
-
-# Install oh-my-zsh if it doesn't yet exist.
-if ! test -d "$HOME/.oh-my-zsh"; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
 
 # Link milktea theme.
 rm -rf $HOME/.oh-my-zsh/themes/milktea.zsh-theme
