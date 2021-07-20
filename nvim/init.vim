@@ -18,6 +18,7 @@ autocmd VimEnter *
 
 " Source config files.
 source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/lsp.vim
 source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/augroups.vim
 source $HOME/.config/nvim/filetypes.vim
