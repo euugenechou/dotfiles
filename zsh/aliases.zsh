@@ -1,46 +1,45 @@
-### Aliases
-
-# Shell
-alias ax="chmod a+x"
+# Shortcuts
 alias back='cd "$OLDPWD"'
 alias c="clear"
-alias home='cd ~'
-alias la="ls -a"
-alias rm="rm -f"
-alias src="source ~/.zshrc"
-alias code="cd ~/Documents/Code"
 
-# System
-alias clearlogs="sudo rm -f ~/private/var/log/asl/*.asl"
+# macOS
 alias finder="open -a Finder"
 alias safari="open -a Safari"
 alias typora="open -a Typora"
 
-# Miscallaneous
-alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
-alias texspellcheck="aspell --lang=en --mode=tex check"
-
-# School
-alias unix="ssh euchou@unix.ucsc.edu"
-alias compilers="ssh euchou@192.249.113.232"
-alias midgar="ssh euchou@localhost -p 5679"
-
-# Python (big sigh)
-alias python="python3"
-
-# Config
-alias vimconfig="vi ~/.dotfiles/nvim/init.vim"
-alias zshconfig="vi ~/.dotfiles/zsh/.zshrc"
+# Zsh
+alias zshsrc="source ~/.zshrc"
 alias zshaliases="vi ~/.dotfiles/zsh/aliases.zsh"
-alias zshfunctions="vi ~/.dotfiles/zsh/functions.zsh"
+alias zshconf="vi ~/.dotfiles/zsh/.zshrc"
 alias zshenv="vi ~/.dotfiles/zsh/env.zsh"
+alias zshfuncs="vi ~/.dotfiles/zsh/functions.zsh"
 alias zshpaths="vi ~/.dotfiles/zsh/paths.zsh"
-alias dotfiles="cd ~/.dotfiles"
+
+# Terminal
+alias kittyconf="vi ~/.dotfiles/kitty/kitty.conf"
+
+# tmux
+alias tmuxconf="vi ~/.tmux.conf"
 
 # Editor
 alias vi="nvim"
 alias vim="nvim"
+alias nvimconf="vi ~/.dotfiles/nvim/init.vim"
+alias nvimplugins="vi ~/.dotfiles/nvim/plugins.vim"
+alias nvimmappings="vi ~/.dotfiles/nvim/mappings.vim"
+alias nvimfiletypes="vi ~/.dotfiles/nvim/filetypes.vim"
+
+# Tree
+alias tree="tree --charset=utf-8"
 
 # Window manager
-alias wmon="brew services start skhd; brew services start yabai"
-alias wmoff="brew services stop skhd; brew services stop yabai"
+alias yabaiconf="vi ~/.yabairc"
+alias skhdconf="vi ~/.skhdrc"
+alias wmstart="brew services start yabai; brew services start skhd;"
+alias wmrestart="brew services restart yabai; brew services restart skhd;"
+alias wmstop="brew services stop yabai; brew services stop skhd;"
+
+# Miscallaneous
+alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
+alias texspellcheck="aspell --lang=en --mode=tex check"
+alias python="python3"

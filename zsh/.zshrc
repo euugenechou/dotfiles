@@ -11,9 +11,6 @@ export DOTFILES=$HOME/.dotfiles
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
-# Terminal environment
-export TERM=xterm-256color
-
 # Set editor for local/remote
 export EDITOR='nvim'
 
@@ -35,17 +32,11 @@ unsetopt autocd
 bindkey '^F' autosuggest-accept
 bindkey ' ' magic-space
 
-# Cute "fortune".
-if [ -x "$(command -v fortune)" > /dev/null 2>&1 ]; then
-  if [ -x "$(command -v cowsay)" > /dev/null 2>&1 ]; then
-    fortune -s | cowsay -f small
-  else
-    fortune -s
-  fi
+# Show TODOs.
+if [ -x "$(command -v task)" &> /dev/null ]; then
+  task list
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-[ -f "/Users/Eugene/.ghcup/env" ] && source "/Users/Eugene/.ghcup/env" # ghcup-env
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+[ -f "$HOME/.cargo/env" ] && source $HOME/.cargo/env
+[ -f "$HOME/.ghcup/env" ] && source $HOME/.ghcup/env
