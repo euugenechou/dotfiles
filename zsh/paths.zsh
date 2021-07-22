@@ -15,6 +15,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.config/guc/scripts
 export MANPATH=$HOME/.config/guc/man:$MANPATH
 
+export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/cpp/clangd/bin
 export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/latex
 export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/rust
 export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/python/node_modules/.bin

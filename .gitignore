@@ -40,3 +40,5 @@ Thumbs.db
 ######################
 plugins/
 themes/
+nvim/plugged
+nvim/autoload
