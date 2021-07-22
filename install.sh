@@ -12,7 +12,7 @@ if ! test -d "$HOME/.oh-my-zsh"; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-# Link Zsh config.
+# Link zsh config.
 ln -sf $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
 
 # Link milktea theme.
@@ -27,9 +27,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfil
 rm -rf $HOME/.config/nvim
 ln -sf $HOME/.dotfiles/nvim $HOME/.config/nvim
 
-# Link kitty configuration
+# Link kitty configuration.
 rm -rf $HOME/.config/kitty
 ln -sf $HOME/.dotfiles/kitty $HOME/.config/kitty
+
+# Link window manager configuration.
+ln -sf $HOME/.dotfiles/yabai/.skhdrc $HOME/.skhdrc
+ln -sf $HOME/.dotfiles/yabai/.yabairc $HOME/.yabairc
 
 # Install nvim plugins and copy snippets over.
 nvim +PlugInstall +qall
