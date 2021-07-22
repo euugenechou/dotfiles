@@ -38,4 +38,10 @@ ln -sf $HOME/.dotfiles/yabai/.yabairc $HOME/.yabairc
 # Install nvim plugins and copy snippets over.
 nvim +PlugInstall +qall
 
+# Install tmux configuration.
+rm -rf $HOME/.tmux
+git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
+ln -sf $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
+cp $HOME/.tmux/.tmux.conf.local $HOME/.tmux.conf.local
+
 echo "Restart terminal and switch to zsh shell to see changes."
