@@ -24,24 +24,22 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/zsh/p
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting
 
 # Link nvim configuration.
-rm -rf $HOME/.config/nvim
-ln -sf $HOME/.dotfiles/nvim $HOME/.config/nvim
-
-# Link kitty configuration.
-rm -rf $HOME/.config/kitty
-ln -sf $HOME/.dotfiles/kitty $HOME/.config/kitty
-
-# Link window manager configuration.
-ln -sf $HOME/.dotfiles/yabai/.skhdrc $HOME/.skhdrc
-ln -sf $HOME/.dotfiles/yabai/.yabairc $HOME/.yabairc
+rm -rf "$HOME/.config/nvim"
+ln -sf "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 
 # Install nvim plugins and copy snippets over.
 nvim +PlugInstall +qall
 
+# Link kitty configuration.
+rm -rf "$HOME/.config/kitty"
+ln -sf "$HOME/.dotfiles/kitty" "$HOME/.config/kitty"
+
+# Link window manager configuration.
+ln -sf "$HOME/.dotfiles/yabai/.skhdrc" "$HOME/.skhdrc"
+ln -sf "$HOME/.dotfiles/yabai/.yabairc" "$HOME/.yabairc"
+
 # Install tmux configuration.
-rm -rf $HOME/.tmux
-git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
-ln -sf $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
-cp $HOME/.tmux/.tmux.conf.local $HOME/.tmux.conf.local
+ln -sf "$HOME/.dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$HOME/.dotfiles/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
 
 echo "Restart terminal and switch to zsh shell to see changes."
