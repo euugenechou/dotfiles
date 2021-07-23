@@ -19,7 +19,7 @@ alias zshpaths="vi ~/.dotfiles/zsh/paths.zsh"
 alias kittyconf="vi ~/.dotfiles/kitty/kitty.conf"
 
 # tmux
-alias tmuxconf="vi ~/.tmux.conf"
+alias tmuxconf="vi ~/.tmux.conf.local"
 
 # Editor
 alias vi="nvim"
