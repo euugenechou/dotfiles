@@ -225,12 +225,12 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=" #S "
+tmux_conf_theme_status_left="[#S]"
 tmux_conf_theme_status_right="#{prefix}"
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_0"
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_14"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_14"
+tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_status_left_attr="bold"
 
 # status right style
