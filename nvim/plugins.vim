@@ -2,6 +2,7 @@ call plug#begin(stdpath('config') . '/plugged')
 
 Plug 'Townk/vim-autoclose'
 Plug 'Yggdroot/indentLine'
+Plug 'euugenechou/sonokai'
 Plug 'gisraptor/vim-lilypond-integrator'
 Plug 'honza/vim-snippets'
 Plug 'hrsh7th/vim-vsnip'
@@ -21,7 +22,6 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'rafamadriz/friendly-snippets'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
-Plug 'sainnhe/sonokai'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
