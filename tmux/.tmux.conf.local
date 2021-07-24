@@ -101,20 +101,20 @@ tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
 tmux_conf_theme_pane_border="$tmux_conf_theme_colour_0"
-tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_14"
+tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_8"
 
 # pane indicator colours (when you hit <prefix> + q)
 tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_0"
 tmux_conf_theme_pane_active_indicator="$tmux_conf_theme_colour_7"
 
 # status line style
-tmux_conf_theme_message_fg="$tmux_conf_theme_colour_0"
-tmux_conf_theme_message_bg="$tmux_conf_theme_colour_14"
+tmux_conf_theme_message_fg="$tmux_conf_theme_colour_15"
+tmux_conf_theme_message_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_message_attr="bold"
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg="default"
-tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_14"
+tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_15"
 tmux_conf_theme_message_command_attr="bold"
 
 # window modes style
@@ -166,7 +166,7 @@ tmux_conf_theme_window_status_format="[#I: #W]"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_15"
+tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_7"
 tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_window_status_current_attr="bold"
 tmux_conf_theme_window_status_current_format="[#I: #W]"
@@ -181,7 +181,7 @@ tmux_conf_theme_window_status_activity_attr="none"
 # window bell status style
 tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_colour_7"
 tmux_conf_theme_window_status_bell_bg="default"
-tmux_conf_theme_window_status_bell_attr="blink,bold"
+tmux_conf_theme_window_status_bell_attr="none"
 
 # window last status style
 tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_8"
@@ -190,9 +190,9 @@ tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
 tmux_conf_theme_left_separator_main=""
-tmux_conf_theme_left_separator_sub="|"
+tmux_conf_theme_left_separator_sub=""
 tmux_conf_theme_right_separator_main=""
-tmux_conf_theme_right_separator_sub="|"
+tmux_conf_theme_right_separator_sub=""
 #tmux_conf_theme_left_separator_main='\uE0B0'  # /!\ you don't need to install Powerline
 #tmux_conf_theme_left_separator_sub='\uE0B1'   #   you only need fonts patched with
 #tmux_conf_theme_right_separator_main='\uE0B2' #   Powerline symbols or the standalone
@@ -229,14 +229,14 @@ tmux_conf_theme_status_left=" #S "
 tmux_conf_theme_status_right="#{prefix}"
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_0"
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_14"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_11"
+tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_status_left_attr="bold"
 
 # status right style
 tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_14"
 tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_0"
-tmux_conf_theme_status_right_attr="bold"
+tmux_conf_theme_status_right_attr="none"
 
 # pairing indicator
 tmux_conf_theme_pairing="⚇"                 # U+2687
