@@ -17,6 +17,7 @@ alias zshpaths="vi ~/.dotfiles/zsh/paths.zsh"
 
 # Terminal
 alias kittyconf="vi ~/.dotfiles/kitty/kitty.conf"
+alias kittycolors="vi ~/.dotfiles/kitty/colors.conf"
 
 # tmux
 alias tmuxconf="vi ~/.tmux.conf.local"
