@@ -118,8 +118,8 @@ tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_14"
 tmux_conf_theme_message_command_attr="bold"
 
 # window modes style
-tmux_conf_theme_mode_fg="$tmux_conf_theme_colour_7"
-tmux_conf_theme_mode_bg="default"
+tmux_conf_theme_mode_fg="$tmux_conf_theme_colour_0"
+tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_7"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style
@@ -149,7 +149,7 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg="default"
+tmux_conf_theme_window_status_fg="$tmux_conf_theme_colour_8"
 tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_window_status_attr="none"
 tmux_conf_theme_window_status_format="[#I: #W]"
@@ -176,7 +176,7 @@ tmux_conf_theme_window_status_current_format="[#I: #W]"
 # window activity status style
 tmux_conf_theme_window_status_activity_fg="default"
 tmux_conf_theme_window_status_activity_bg="default"
-tmux_conf_theme_window_status_activity_attr="underscore"
+tmux_conf_theme_window_status_activity_attr="none"
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_colour_7"
@@ -184,7 +184,7 @@ tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style
-tmux_conf_theme_window_status_last_fg="default"
+tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_8"
 tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_window_status_last_attr="none"
 
@@ -225,12 +225,12 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=" [#S] "
+tmux_conf_theme_status_left=" #S "
 tmux_conf_theme_status_right="#{prefix}"
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_14"
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_0"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_0"
+tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_14"
 tmux_conf_theme_status_left_attr="bold"
 
 # status right style
