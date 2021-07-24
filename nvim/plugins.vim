@@ -3,6 +3,7 @@ call plug#begin(stdpath('config') . '/plugged')
 Plug 'Townk/vim-autoclose'
 Plug 'Yggdroot/indentLine'
 Plug 'euugenechou/sonokai'
+Plug 'gabrielelana/vim-markdown'
 Plug 'gisraptor/vim-lilypond-integrator'
 Plug 'honza/vim-snippets'
 Plug 'hrsh7th/vim-vsnip'
@@ -26,6 +27,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -37,7 +39,18 @@ let g:indentLine_char = '▏'
 let g:indentLine_fileTypeExclude = ['json', 'tex', 'markdown']
 
 " LightLine.
-let g:lightline={ 'colorscheme': 'sonokai' }
+" let g:lightline={ 'colorscheme': 'sonokai' }
+let g:lightline = {
+      \ 'colorscheme': 'sonokai',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ],
+      \             [ 'gitbranch' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " LaTex.
 let g:tex_flavor = 'tex'
