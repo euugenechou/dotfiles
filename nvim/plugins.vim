@@ -58,6 +58,16 @@ let $FZF_DEFAULT_OPTS='--layout=reverse -m'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
+" Goyo
+let g:goyo_width = 101
+let g:goyo_linenr = 1
+
+function! s:goyo_enter()
+  set relativenumber
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+
 " Emmet
 let g:user_emmet_leader_key = '<c-e>'
 
