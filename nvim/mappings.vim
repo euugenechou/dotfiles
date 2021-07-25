@@ -84,7 +84,7 @@ nnoremap <leader>gb :Gblame<cr>
 " FZF.
 nmap <c-f> :Files<cr>
 nmap <c-g> :Rg<cr>
-nmap <c-l> :Buffers<cr>
+nmap <c-t> :Buffers<cr>
 
 " Sign column off initially.
 set signcolumn=no
