@@ -31,6 +31,8 @@ unsetopt autocd
 # Custom keybindings.
 bindkey '^F' autosuggest-accept
 bindkey ' ' magic-space
+bindkey '^L' forward-word
+bindkey '^H' backward-word
 
 # Show TODOs.
 if [ -x "$(command -v task)" &> /dev/null ]; then
