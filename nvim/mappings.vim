@@ -62,10 +62,6 @@ nnoremap <c-l> >>
 xnoremap <c-l> >gv
 xnoremap > >gv
 
-" Quickly start up a macro.
-nnoremap Q @q
-vnoremap Q :norm @q<cr>
-
 " Yank until end of line.
 nnoremap Y y$
 
@@ -75,28 +71,20 @@ nnoremap c* /\<<c-r>=expand('<cword>')<cr>\>\C<cr>``cgn
 " Delete current word and highlight all other occurrences.
 nnoremap d* /\<<c-r>=expand('<cword>')<cr>\>\C<cr>``dgn
 
-" Increase window size.
-nnoremap <leader>+ 10<c-w>+<cr>
-
-" Decrease window size.
-nnoremap <leader>- 10<c-w>-<cr>
-
-" Run default Makefile target.
-nnoremap <leader>m :make!<cr>
-
-" Toggle NERDTree sidebar.
-map <c-n> <Esc>:NERDTreeToggle<cr>
-
-" Toggle ALE linting.
-map <leader>l :ALEToggle<cr>
-
-" Toggle Goyo.
-map <leader>g :Goyo<cr>
+" Git.
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>ga :Gwrite<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gl :Git log<cr>
+nnoremap <leader>gp :Gpush<cr>
+nnoremap <leader>gd :Gdiffsplit<cr>
+nnoremap <leader>gb :Gblame<cr>
 
 " FZF.
 nmap <c-f> :Files<cr>
 nmap <c-g> :Rg<cr>
-nmap <c-p> :Buffers<cr>
+nmap <c-l> :Buffers<cr>
 
 " Sign column off initially.
 set signcolumn=no
