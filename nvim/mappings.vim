@@ -77,7 +77,7 @@ nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>gc :Git commit<cr>
 nnoremap <leader>gl :Git log<cr>
-nnoremap <leader>gp :Gpush<cr>
+nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>gd :Gdiffsplit<cr>
 nnoremap <leader>gb :Gblame<cr>
 
