@@ -16,12 +16,6 @@ nnoremap <leader>q <esc>:q!<cr>
 " Copy and paste paragraph.
 noremap cp yap<S-}>p
 
-" Cycle to previous file.
-map [a <esc>:prev<cr>
-
-" Cycle to next file.
-map ]a <esc>:next<cr>
-
 " Insert open/closing parentheses, then enter insert mode in-between.
 inoremap (<cr> (<cr>)<esc>O
 
