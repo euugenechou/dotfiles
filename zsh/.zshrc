@@ -34,6 +34,8 @@ bindkey ' ' magic-space
 bindkey '^L' forward-word
 bindkey '^H' backward-word
 
+ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
+
 # Show TODOs.
 if [ -x "$(command -v task)" &> /dev/null ]; then
   task list
