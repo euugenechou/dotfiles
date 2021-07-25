@@ -29,6 +29,7 @@ alias nvimconf="vi ~/.dotfiles/nvim/init.vim"
 alias nvimplugins="vi ~/.dotfiles/nvim/plugins.vim"
 alias nvimmappings="vi ~/.dotfiles/nvim/mappings.vim"
 alias nvimfiletypes="vi ~/.dotfiles/nvim/filetypes.vim"
+alias nvimsettings="vi ~/.dotfiles/nvim/settings.vim"
 alias nvimlsp="vi ~/.dotfiles/nvim/lsp.vim"
 
 # Tree

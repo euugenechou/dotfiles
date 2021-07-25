@@ -2,6 +2,7 @@ call plug#begin(stdpath('config') . '/plugged')
 
 Plug 'Townk/vim-autoclose'
 Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
 Plug 'euugenechou/sonokai'
 Plug 'gabrielelana/vim-markdown'
 Plug 'gisraptor/vim-lilypond-integrator'

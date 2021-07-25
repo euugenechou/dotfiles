@@ -86,8 +86,8 @@ nmap <c-f> :Files<cr>
 nmap <c-g> :Rg<cr>
 nmap <c-t> :Buffers<cr>
 
-" Sign column off initially.
-set signcolumn=no
+" Sign column on initially.
+set signcolumn=yes
 
 function! ToggleSignColumn()
   if (&signcolumn == "yes")

@@ -46,6 +46,7 @@ set undodir=/tmp
 set undofile
 set undolevels=1000
 set undoreload=10000
+set updatetime=300
 set wildignore=*.o,*~,*.pyc
 set wildmenu
 set wildmode=list:longest,full
