@@ -8,10 +8,10 @@ map! <C-c> <esc><esc>
 nnoremap <leader>w <esc>:w<cr>
 
 " Write and quit.
-nnoremap <leader>s <esc>:x<cr>
+nnoremap <leader>s <esc>:x<cr><esc>:Sayonara<cr>
 
 " Quit without writing.
-nnoremap <leader>q <esc>:q!<cr>
+nnoremap <leader>q <esc>:Sayonara!<cr>
 
 " Copy and paste paragraph.
 noremap cp yap<S-}>p

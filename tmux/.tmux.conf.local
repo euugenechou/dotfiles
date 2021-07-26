@@ -346,6 +346,9 @@ set -g mouse on
 unbind &
 bind-key & kill-window
 
+unbind x
+bind-key x kill-pane
+
 # move status line to top
 set -g status-position bottom
 
