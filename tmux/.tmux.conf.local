@@ -343,6 +343,9 @@ set -g mouse on
 # set -g prefix C-a
 # bind C-a send-prefix
 
+unbind &
+bind-key & kill-window
+
 # move status line to top
 set -g status-position bottom
 
