@@ -229,12 +229,12 @@ tmux_conf_theme_status_left=" #S "
 tmux_conf_theme_status_right="#{prefix} %B %d, %I:%M %p | #{hostname} "
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_11"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_13"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_status_left_attr="bold"
 
 # status right style
-tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_11"
+tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_13"
 tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_0,$tmux_conf_theme_colour_0"
 tmux_conf_theme_status_right_attr="bold,bold"
 

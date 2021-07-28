@@ -26,7 +26,6 @@ source $HOME/.config/nvim/settings.vim
 
 " Syntax highlighting and colors.
 syntax on
-let g:sonokai_style = 'shusia'
-let g:sonokai_disable_italic_comment = 1
-let g:sonokai_transparent_background = 1
-colorscheme sonokai
+let g:gruvbox_material_disable_italic_comment = 1
+let g:gruvbox_material_transparent_background = 1
+colorscheme gruvbox-material

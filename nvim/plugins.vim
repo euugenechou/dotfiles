@@ -4,6 +4,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'euugenechou/sonokai'
+Plug 'euugenechou/gruvbox-material'
 Plug 'gabrielelana/vim-markdown'
 Plug 'gisraptor/vim-lilypond-integrator'
 Plug 'honza/vim-snippets'
@@ -40,9 +41,8 @@ let g:indentLine_char = '▏'
 let g:indentLine_fileTypeExclude = ['json', 'tex', 'markdown']
 
 " LightLine.
-" let g:lightline={ 'colorscheme': 'sonokai' }
 let g:lightline = {
-      \ 'colorscheme': 'sonokai',
+      \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ],
