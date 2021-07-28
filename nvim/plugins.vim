@@ -76,14 +76,5 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 let g:goyo_width = 101
 let g:goyo_linenr = 1
 
-function! s:goyo_enter()
-  set relativenumber
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-
-" Emmet
-let g:user_emmet_leader_key = '<c-e>'
-
 " Rust
 let g:rustfmt_autosave = 1
