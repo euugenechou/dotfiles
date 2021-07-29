@@ -16,16 +16,18 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-" Source config files.
+" Handle plugins first.
 source $HOME/.config/nvim/plugins.vim
-source $HOME/.config/nvim/lsp.vim
-source $HOME/.config/nvim/mappings.vim
-source $HOME/.config/nvim/augroups.vim
-source $HOME/.config/nvim/filetypes.vim
-source $HOME/.config/nvim/settings.vim
 
-" Syntax highlighting and colors.
+" Then load the colorscheme.
 syntax on
 let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_transparent_background = 1
 colorscheme gruvbox-material
+
+" Source the rest of the config, ending with settings.
+source $HOME/.config/nvim/augroups.vim
+source $HOME/.config/nvim/lsp.vim
+source $HOME/.config/nvim/mappings.vim
+source $HOME/.config/nvim/filetypes.vim
+source $HOME/.config/nvim/settings.vim
