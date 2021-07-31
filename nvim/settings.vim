@@ -111,3 +111,9 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
+
+" asciidoctor
+let g:asciidoctor_executable = 'asciidoctor'
+let g:asciidoctor_pdf_executable = 'asciidoctor-pdf'
+let g:asciidoctor_syntax_conceal = 0
+let g:asciidoctor_syntax_indented = 0
