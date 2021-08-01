@@ -1,45 +1,116 @@
 #!/bin/bash
 
-echo "Setting up Eugene's environment..."
+function install_zsh() {
+    # Install shell if it doesn't yet exist.
+    if ! command -v zsh > /dev/null; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    fi
 
-# Install Zsh if it doesn't yet exist.
-if ! command -v zsh; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    # Install oh-my-zsh if it doesn't yet exist.
+    if ! test -d "$HOME/.oh-my-zsh"; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    fi
+
+    # Install plugins.
+    rm -rf $HOME/.dotfiles/zsh/plugins
+    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/zsh/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting
+
+    # Link zsh config and theme.
+    ln -sf $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+    ln -sf $HOME/.dotfiles/zsh/milktea.zsh-theme $HOME/.oh-my-zsh/themes/milktea.zsh-theme
+}
+
+function install_nvim() {
+    # Link configuration.
+    rm -rf "$HOME/.config/nvim"
+    ln -sf "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
+
+    # Install plugins.
+    nvim +PlugInstall +qall
+}
+
+function install_kitty() {
+    # Link configuration.
+    rm -rf "$HOME/.config/kitty"
+    ln -sf "$HOME/.dotfiles/kitty" "$HOME/.config/kitty"
+}
+
+function install_yabai() {
+    # Link configuration.
+    ln -sf "$HOME/.dotfiles/yabai/.skhdrc" "$HOME/.skhdrc"
+    ln -sf "$HOME/.dotfiles/yabai/.yabairc" "$HOME/.yabairc"
+}
+
+function install_tmux() {
+    # Install tmux configuration.
+    ln -sf "$HOME/.dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
+    ln -sf "$HOME/.dotfiles/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
+}
+
+if [[ $# -lt 1 ]]; then
+    echo "usage: $0 --[all, zsh, nvim, kitty, tmux]"
 fi
 
-# Install oh-my-zsh if it doesn't yet exist.
-if ! test -d "$HOME/.oh-my-zsh"; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+zsh=false
+nvim=false
+kitty=false
+yabai=false
+tmux=false
+
+for i in "$@"; do
+    case $i in
+        -z|--zsh)
+            zsh=true
+            ;;
+        -n|--nvim)
+            nvim=true
+            ;;
+        -k|--kitty)
+            kitty=true
+            ;;
+        -y|--yabai)
+            yabai=true
+            ;;
+        -t|--tmux)
+            tmux=true
+            ;;
+        -a|--all)
+            zsh=true
+            nvim=true
+            kitty=true
+            yabai=true
+            tmux=true
+            ;;
+    esac
+done
+
+if $zsh; then
+    echo "Installing zsh."
+    install_zsh
+    echo "Installed zsh (remember to restart for changes)."
 fi
 
-# Link zsh config.
-ln -sf $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+if $nvim; then
+    echo "Installing nvim."
+    install_nvim
+    echo "Installed nvim."
+fi
 
-# Link milktea theme.
-ln -sf $HOME/.dotfiles/zsh/milktea.zsh-theme $HOME/.oh-my-zsh/themes/milktea.zsh-theme
+if $kitty; then
+    echo "Installing kitty."
+    install_kitty
+    echo "Installed kitty."
+fi
 
-# Install Zsh plugins.
-rm -rf $HOME/.dotfiles/zsh/plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/zsh/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting
+if $yabai; then
+    echo "Installing yabai."
+    install_yabai
+    echo "Installed yabai."
+fi
 
-# Link nvim configuration.
-rm -rf "$HOME/.config/nvim"
-ln -sf "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
-
-# Install nvim plugins and copy snippets over.
-nvim +PlugInstall +qall
-
-# Link kitty configuration.
-rm -rf "$HOME/.config/kitty"
-ln -sf "$HOME/.dotfiles/kitty" "$HOME/.config/kitty"
-
-# Link window manager configuration.
-ln -sf "$HOME/.dotfiles/yabai/.skhdrc" "$HOME/.skhdrc"
-ln -sf "$HOME/.dotfiles/yabai/.yabairc" "$HOME/.yabairc"
-
-# Install tmux configuration.
-ln -sf "$HOME/.dotfiles/tmux/.tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$HOME/.dotfiles/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
-
-echo "Restart terminal and switch to zsh shell to see changes."
+if $tmux; then
+    echo "Installing tmux."
+    install_tmux
+    echo "Installed tmux."
+fi
