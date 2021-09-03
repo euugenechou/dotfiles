@@ -110,3 +110,9 @@ imap <expr> <cr>  pumvisible() ? complete_info()["selected"] != "-1" ?
 
 " possible value: 'UltiSnips', 'Neosnippet', 'vim-vsnip', 'snippets.nvim'
 let g:completion_enable_snippet = 'vim-vsnip'
+
+let g:targets_aiAI = 'aIAi'
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)

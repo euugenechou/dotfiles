@@ -46,3 +46,6 @@ alias wmstop="brew services stop yabai; brew services stop skhd;"
 alias mp3-dl="youtube-dl --extract-audio --audio-format mp3"
 alias texspellcheck="aspell --lang=en --mode=tex check"
 alias python="python3"
+
+# Kitty
+alias icat="kitty +kitten icat"

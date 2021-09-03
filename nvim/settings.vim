@@ -13,23 +13,21 @@ set fileformats=unix,dos,mac
 set formatoptions-=cro
 set hidden
 set history=1000
-set hlsearch
-set ignorecase
 set laststatus=2
 set mat=2
 set modeline
 set mouse=a
 set nocompatible
 set noerrorbells
+set nofoldenable
+set nohlsearch
 set nojoinspaces
 set noshowmode
 set noswapfile
 set novisualbell
-set nofoldenable
 set number
 set pastetoggle=<leader>z
 set relativenumber
-set ruler
 set ruler
 set scrolloff=4
 set secure
@@ -93,7 +91,7 @@ let g:user_emmet_leader_key = '<c-e>'
 let g:rustfmt_autosave = 1
 
 " FZF
-let $BAT_THEME='Monokai Extended Bright'
+let $BAT_THEME='gruvbox-dark'
 let $FZF_DEFAULT_OPTS='--layout=reverse -m'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)

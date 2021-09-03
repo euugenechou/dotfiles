@@ -12,8 +12,8 @@ export PATH=$PATH:/opt/local/bin
 export GOPATH="$HOME/Code/go"
 export PATH=$PATH:$GOPATH/bin
 
-export PATH=$PATH:$HOME/.config/guc/scripts
-export MANPATH=$MANPATH:$HOME/.config/guc/man:
+export PATH=$PATH:$HOME/.config/gcu/scripts
+export MANPATH=$MANPATH:$HOME/.config/gcu/man:
 
 export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/cpp/clangd/bin
 export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/latex

@@ -79,6 +79,7 @@
 # open specific applications
 ctrl + cmd - t : open -a "Kitty"
 ctrl + cmd - s : open -a "Safari"
+ctrl + cmd - d : open -a "Discord"
 
 # focus window
 ctrl + cmd - h : yabai -m window --focus west
