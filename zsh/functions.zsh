@@ -20,5 +20,5 @@ function mkvirtualenvpy3() {
 
 function chpwd() {
     emulate -L zsh
-    ls -lah
+    ls -lh
 }
