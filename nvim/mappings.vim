@@ -66,7 +66,7 @@ nnoremap c* /\<<c-r>=expand('<cword>')<cr>\>\C<cr>``cgn
 nnoremap d* /\<<c-r>=expand('<cword>')<cr>\>\C<cr>``dgn
 
 " Git.
-nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gs :Git<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>gc :Git commit<cr>
