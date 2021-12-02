@@ -15,9 +15,9 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.config/gcu/scripts
 export MANPATH=::$MANPATH:$HOME/.config/gcu/man
 
-export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/cpp/clangd/bin
-export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/latex
-export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/rust
-export PATH=$PATH:$HOME/.local/share/nvim/lspinstall/python/node_modules/.bin
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/clangd
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/latex
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/rust
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/python/node_modules/.bin
 export PATH=$PATH:/opt/homebrew/Cellar/reattach-to-user-namespace/2.9
 export PATH=/opt/homebrew/sbin:$PATH

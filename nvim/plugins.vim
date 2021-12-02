@@ -17,7 +17,6 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'kabouzeid/nvim-lspinstall'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'nvim-lua/completion-nvim'
@@ -32,5 +31,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
+Plug 'williamboman/nvim-lsp-installer'
 
 call plug#end()
