@@ -81,7 +81,7 @@ nmap <c-g> :Rg<cr>
 nmap <c-t> :Buffers<cr>
 
 " Sign column on initially.
-set signcolumn=yes
+set signcolumn=no
 
 function! ToggleSignColumn()
   if (&signcolumn == "yes")
