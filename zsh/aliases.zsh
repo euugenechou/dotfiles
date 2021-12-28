@@ -1,6 +1,7 @@
 # Shortcuts
 alias back='cd "$OLDPWD"'
 alias c="clear"
+alias dotfiles="cd $HOME/.dotfiles"
 
 # macOS
 alias finder="open -a Finder"

@@ -56,30 +56,24 @@ let g:indentLine_char = '▏'
 let g:indentLine_fileTypeExclude = ['json', 'tex', 'markdown']
 
 " LightLine.
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox_material',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ],
-      \             [ 'gitbranch' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+let g:lightline =
+  \ {
+  \   'colorscheme': 'gruvbox_material',
+  \   'active': {
+  \     'left': [ [ 'mode', 'paste' ],
+  \               [ 'readonly', 'filename', 'modified' ],
+  \               [ 'gitbranch' ] ]
+  \   },
+  \   'component_function': {
+  \     'gitbranch': 'FugitiveHead'
+  \   },
+  \ }
 
 " LaTex.
 let g:tex_flavor = 'tex'
 
 " Remove stupid included NeoVim SQL bindings.
 let g:omni_sql_no_default_maps = 1
-
-" clang-format
-let g:clang_format#auto_format = 0
-let g:clang_format#style_options = {
-  \   "BasedOnStyle": "LLVM",
-  \   "IndentWidth": 4,
-  \ }
 
 " Goyo
 let g:goyo_width = 101
@@ -95,23 +89,42 @@ let $BAT_THEME='gruvbox-dark'
 let $FZF_DEFAULT_OPTS='--layout=reverse -m'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
- let g:fzf_colors =
-    \ { 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['bg', 'Comment'],
-      \ 'prompt':  ['fg', 'Conditional'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment'] }
+let g:fzf_colors =
+  \ {
+  \   'fg':      ['fg', 'Normal'],
+  \   'bg':      ['bg', 'Normal'],
+  \   'hl':      ['fg', 'Comment'],
+  \   'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \   'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \   'hl+':     ['fg', 'Statement'],
+  \   'info':    ['fg', 'PreProc'],
+  \   'border':  ['bg', 'Comment'],
+  \   'prompt':  ['fg', 'Conditional'],
+  \   'pointer': ['fg', 'Exception'],
+  \   'marker':  ['fg', 'Keyword'],
+  \   'spinner': ['fg', 'Label'],
+  \   'header':  ['fg', 'Comment']
+  \ }
 
 " asciidoctor
 let g:asciidoctor_executable = 'asciidoctor'
 let g:asciidoctor_pdf_executable = 'asciidoctor-pdf'
 let g:asciidoctor_syntax_conceal = 0
 let g:asciidoctor_syntax_indented = 0
+
+" clang-format
+let g:clang_format#auto_format = 1
+let g:clang_format#command = 'clang-format'
+let g:clang_format#style_options =
+  \ {
+  \   "BasedOnStyle" : "LLVM",
+  \   "IndentWidth" : 4,
+  \   "UseTab" : "Never",
+  \   "AllowShortIfStatementsOnASingleLine" : "false",
+  \   "AllowShortFunctionsOnASingleLine" : "None",
+  \   "AlignArrayOfStructures" : "Left",
+  \   "AlignConsecutiveMacros" : "Consecutive",
+  \   "AlignTrailingComments" : "true",
+  \   "BreakBeforeBraces" : "Linux",
+  \   "IndentCaseLabels" : "false"
+  \ }
