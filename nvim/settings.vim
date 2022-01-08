@@ -31,13 +31,13 @@ set relativenumber
 set ruler
 set scrolloff=4
 set secure
-set shiftwidth=2
+set shiftwidth=4
 set showcmd
 set showmatch
 set smartindent
 set splitright
 set t_vb=
-set tabstop=2
+set tabstop=4
 set termguicolors
 set textwidth=80
 set tm=500
@@ -128,3 +128,6 @@ let g:clang_format#style_options =
   \   "BreakBeforeBraces" : "Linux",
   \   "IndentCaseLabels" : "false"
   \ }
+
+" vim-vsnip
+let g:vsnip_snippet_dir = expand('~/.config/nvim/plugged/friendly-snippets/snippets')

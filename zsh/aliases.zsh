@@ -17,6 +17,7 @@ alias zshfuncs="vi ~/.dotfiles/zsh/functions.zsh"
 alias zshpaths="vi ~/.dotfiles/zsh/paths.zsh"
 
 # Terminal
+alias alacrittyconf="vi ~/.dotfiles/alacritty/alacritty.yml"
 alias kittyconf="vi ~/.dotfiles/kitty/kitty.conf"
 alias kittycolors="vi ~/.dotfiles/kitty/colors.conf"
 
@@ -50,3 +51,5 @@ alias python="python3"
 
 # Kitty
 alias icat="kitty +kitten icat"
+
+alias scalaold="/opt/homebrew/opt/scala@2.12/bin/scala"

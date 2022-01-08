@@ -80,6 +80,7 @@
 ctrl + cmd - t : open -a "Kitty"
 ctrl + cmd - s : open -a "Safari"
 ctrl + cmd - d : open -a "Discord"
+ctrl + cmd - l : open -a "Slack"
 
 # focus window
 ctrl + cmd - h : yabai -m window --focus west
