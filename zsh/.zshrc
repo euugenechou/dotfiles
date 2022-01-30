@@ -14,15 +14,33 @@ export LANG="$LC_ALL"
 # Set editor for local/remote
 export EDITOR='nvim'
 
+# Source plugin manager
+export ZPLUG_HOME=$HOME/.zplug
+source $ZPLUG_HOME/init.zsh
+
 # Plugins
-plugins=(zsh-syntax-highlighting zsh-autosuggestions vi-mode)
+zplug "wfxr/forgit"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Load the plugins
+zplug load
 
 # Automatically update oh-my-zsh
 export UPDATE_ZSH_DAYS=14
 
-# Set dotfiles as oh-my-zsh custom folder
+# Set zsh directory under dotfiles as custom folder
 ZSH_CUSTOM=$DOTFILES/zsh
 
+# Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Don't autocd.
@@ -38,7 +56,7 @@ ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
 
 # Show TODOs.
 if [ -x "$(command -v task)" &> /dev/null ]; then
-  task list
+    task list
 fi
 
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh

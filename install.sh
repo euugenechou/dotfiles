@@ -11,10 +11,8 @@ function install_zsh() {
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     fi
 
-    # Install plugins.
-    rm -rf $HOME/.dotfiles/zsh/plugins
-    git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/zsh/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.dotfiles/zsh/plugins/zsh-syntax-highlighting
+    # Install zplug if it doesn't yet exist.
+    git clone https://github.com/zplug/zplug $HOME/.zplug
 
     # Link zsh config and theme.
     ln -sf $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
