@@ -31,8 +31,8 @@ unsetopt autocd
 # Custom keybindings.
 bindkey '^F' autosuggest-accept
 bindkey ' ' magic-space
-bindkey '^L' forward-word
-bindkey '^H' backward-word
+bindkey '^L' forward-char
+bindkey '^H' backward-char
 
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
 
