@@ -45,7 +45,7 @@ set undodir=/tmp
 set undofile
 set undolevels=1000
 set undoreload=10000
-set updatetime=300
+set updatetime=1000
 set wildignore=*.o,*~,*.pyc
 set wildmenu
 set wildmode=list:longest,full
@@ -86,7 +86,10 @@ let g:rustfmt_autosave = 1
 
 " FZF
 let $BAT_THEME='gruvbox-dark'
-let $FZF_DEFAULT_OPTS='--layout=reverse -m'
+let $FZF_DEFAULT_OPTS="--layout=reverse -m
+    \ --bind ctrl-y:preview-up,ctrl-e:preview-down,
+    \ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
+
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 let g:fzf_colors =
@@ -117,16 +120,28 @@ let g:clang_format#auto_format = 1
 let g:clang_format#command = 'clang-format'
 let g:clang_format#style_options =
   \ {
-  \   "BasedOnStyle" : "LLVM",
+  \   "BasedOnStyle" : "WebKit",
   \   "IndentWidth" : 4,
   \   "UseTab" : "Never",
-  \   "AllowShortIfStatementsOnASingleLine" : "false",
-  \   "AllowShortFunctionsOnASingleLine" : "None",
-  \   "AlignArrayOfStructures" : "Left",
-  \   "AlignConsecutiveMacros" : "Consecutive",
-  \   "AlignTrailingComments" : "true",
-  \   "BreakBeforeBraces" : "Linux",
-  \   "IndentCaseLabels" : "false"
+  \   "AlignConsecutiveMacros": "true",
+  \   "AlignEscapedNewlines": "Right",
+  \   "AlignOperands": "true",
+  \   "AllowShortBlocksOnASingleLine": "Never",
+  \   "AllowShortCaseLabelsOnASingleLine": "true",
+  \   "AllowShortFunctionsOnASingleLine": "None",
+  \   "AllowShortIfStatementsOnASingleLine": "Never",
+  \   "ColumnLimit": "100",
+  \   "IncludeBlocks": "Regroup",
+  \   "IndentCaseLabels": "false",
+  \   "IndentWrappedFunctionNames": "true",
+  \   "PointerAlignment": "Right",
+  \   "ReflowComments": "false",
+  \   "SortIncludes": "false",
+  \   "SpaceAfterCStyleCast": "true",
+  \   "SpaceAfterLogicalNot": "false",
+  \   "SpaceBeforeAssignmentOperators": "true",
+  \   "SpaceAfterControlStatementKeyword": "true",
+  \   "BreakBeforeBraces": "Attach"
   \ }
 
 " vim-vsnip

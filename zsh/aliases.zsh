@@ -13,6 +13,7 @@ alias zshsrc="source ~/.zshrc"
 alias zshaliases="vi ~/.dotfiles/zsh/aliases.zsh"
 alias zshconf="vi ~/.dotfiles/zsh/.zshrc"
 alias zshenv="vi ~/.dotfiles/zsh/env.zsh"
+alias zshexports="vi ~/.dotfiles/zsh/exports.zsh"
 alias zshfuncs="vi ~/.dotfiles/zsh/functions.zsh"
 alias zshpaths="vi ~/.dotfiles/zsh/paths.zsh"
 
