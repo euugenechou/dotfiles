@@ -21,9 +21,8 @@ autocmd CursorHold * echo
 
 " Custom filetype detection.
 augroup filetypedetect
-  autocmd!
-  autocmd BufNewFile,BufRead *.arl setl filetype=ariel
-  autocmd BufNewFile,BufRead *.gleam setl filetype=gleam
+  au BufNewFile,BufRead *.arl setl filetype=ariel
+  au BufNewFile,BufRead *.gleam setl filetype=gleam
 augroup END
 
 " Disable comments on next line.
