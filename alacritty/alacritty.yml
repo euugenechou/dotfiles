@@ -14,14 +14,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-# env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  # TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -117,15 +117,15 @@ font:
     style: Retina
 
   # Bold font face
-  bold:
+  # bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Code
+    # family: Fira Code
 
     # The `style` can be specified to pick a specific face.
-    style: SemiBold
+    # style: SemiBold
 
   # Italic font face
   #italic:
@@ -157,14 +157,14 @@ font:
   # spacing.
   offset:
     x: 0
-    y: 12
+    y: 11
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
   glyph_offset:
     x: 0
-    y: 4
+    y: 3
 
   # Thin stroke font rendering (macOS only)
   #
@@ -179,8 +179,8 @@ draw_bold_text_with_bright_colors: false
 colors:
   # Default colors
   primary:
-    background: '#282828'
-    foreground: '#d4be98'
+    background: '#262626'
+    foreground: '#bda988'
 
     # Bright and dim foreground colors
     #
@@ -263,30 +263,30 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   selection:
-   text: CellBackground
-   background: CellForeground
+    text: CellBackground
+    background: CellForeground
 
   # Normal colors
   normal:
-   black:   '#32302f'
-   red:     '#ea6962'
-   green:   '#a9b665'
-   yellow:  '#d8a657'
-   blue:    '#7daea3'
-   magenta: '#d3869b'
-   cyan:    '#89b482'
-   white:   '#d4be98'
+    black:   '#32302f'
+    red:     '#c7544e'
+    green:   '#97a35b'
+    yellow:  '#bf9d4e'
+    blue:    '#6f9e93'
+    magenta: '#bd7388'
+    cyan:    '#84ad7d'
+    white:   '#e0cfaf'
 
   # Bright colors
   bright:
-    black:   '#504945'
-    red:     '#ea6962'
-    green:   '#a9b665'
-    yellow:  '#d8a657'
-    blue:    '#7daea3'
-    magenta: '#d3869b'
-    cyan:    '#89b482'
-    white:   '#ddc7a1'
+    black:   '#544c45'
+    red:     '#c7544e'
+    green:   '#97a35b'
+    yellow:  '#bf9d4e'
+    blue:    '#6f9e93'
+    magenta: '#bd7388'
+    cyan:    '#84ad7d'
+    white:   '#f5e7cb'
 
   # Dim colors
   #
