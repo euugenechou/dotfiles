@@ -53,6 +53,7 @@ set wrap
 
 " IndentLine.
 let g:indentLine_char = '▏'
+let g:indentLine_color_gui = '#544c45'
 let g:indentLine_fileTypeExclude = ['json', 'tex', 'markdown']
 
 " LightLine.
@@ -116,15 +117,17 @@ let g:asciidoctor_syntax_conceal = 0
 let g:asciidoctor_syntax_indented = 0
 
 " clang-format
-let g:clang_format#auto_format = 1
+let g:clang_format#auto_format = 0
 let g:clang_format#command = 'clang-format'
 let g:clang_format#style_options =
   \ {
   \   "BasedOnStyle" : "WebKit",
   \   "IndentWidth" : 4,
   \   "UseTab" : "Never",
+  \   "AlignArrayOfStructures": "Left",
   \   "AlignConsecutiveMacros": "true",
-  \   "AlignEscapedNewlines": "Right",
+  \   "AlignTrailingComments": "true",
+  \   "AlignEscapedNewlines": "Left",
   \   "AlignOperands": "true",
   \   "AllowShortBlocksOnASingleLine": "Never",
   \   "AllowShortCaseLabelsOnASingleLine": "true",
@@ -137,7 +140,7 @@ let g:clang_format#style_options =
   \   "PointerAlignment": "Right",
   \   "ReflowComments": "false",
   \   "SortIncludes": "false",
-  \   "SpaceAfterCStyleCast": "true",
+  \   "SpaceAfterCStyleCast": "false",
   \   "SpaceAfterLogicalNot": "false",
   \   "SpaceBeforeAssignmentOperators": "true",
   \   "SpaceAfterControlStatementKeyword": "true",

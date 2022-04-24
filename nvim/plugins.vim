@@ -35,6 +35,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
+Plug 'whonore/Coqtail'
 Plug 'williamboman/nvim-lsp-installer'
 
 call plug#end()

@@ -23,6 +23,7 @@ source $HOME/.config/nvim/plugins.vim
 syntax on
 let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_background = 'soft'
 colorscheme gruvbox-material
 
 " Source the rest of the config, ending with settings.

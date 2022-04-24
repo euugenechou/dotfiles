@@ -19,6 +19,13 @@ autocmd CursorHold * echo
 " endfunction
 " autocmd User ClapOnEnter call MyClapOnEnter()
 
+" Custom filetype detection.
+augroup filetypedetect
+  autocmd!
+  autocmd BufNewFile,BufRead *.arl setl filetype=ariel
+  autocmd BufNewFile,BufRead *.gleam setl filetype=gleam
+augroup END
+
 " Disable comments on next line.
 " augroup prereads
 "   autocmd!

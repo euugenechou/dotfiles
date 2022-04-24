@@ -1,8 +1,7 @@
 " Key to start custom mappings with.
 let mapleader=" "
 
-map <c-c> <esc><esc>
-map! <C-c> <esc><esc>
+inoremap <c-j> <esc><esc>
 
 " Only write.
 nnoremap <leader>w <esc>:w<cr>
@@ -36,13 +35,11 @@ nnoremap <space><space> i<space><esc>
 
 " Move current line down.
 nnoremap <silent> <c-j> :m .+1<cr>==
-inoremap <silent> <c-j> <Esc>:m .+1<cr>==gi
 vnoremap <silent> <c-j> :m '>+1<cr>gv=gv
 xnoremap <silent> <c-j> :move'>+<cr>gv
 
 " Move current line up.
 nnoremap <silent> <c-k> :m .-2<cr>==
-inoremap <silent> <c-k> <Esc>:m .-2<cr>==gi
 vnoremap <silent> <c-k> :m '<-2<cr>gv=gv
 xnoremap <silent> <c-k> :move-2<cr>gv
 
