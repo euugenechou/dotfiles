@@ -34,6 +34,7 @@ alias nvimmappings="vi ~/.dotfiles/nvim/mappings.vim"
 alias nvimfiletypes="vi ~/.dotfiles/nvim/filetypes.vim"
 alias nvimsettings="vi ~/.dotfiles/nvim/settings.vim"
 alias nvimlsp="vi ~/.dotfiles/nvim/lsp.vim"
+alias nvimaugroups="vi ~/.dotfiles/nvim/augroups.vim"
 
 # Tree
 alias tree="tree --charset=utf-8"
