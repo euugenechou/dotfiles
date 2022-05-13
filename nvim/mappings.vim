@@ -64,13 +64,13 @@ nnoremap d* /\<<c-r>=expand('<cword>')<cr>\>\C<cr>``dgn
 
 " Git.
 nnoremap <leader>gs :Git<cr>
-nnoremap <leader>ga :Gwrite<cr>
+nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>gc :Git commit<cr>
 nnoremap <leader>gl :Git log<cr>
 nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>gd :Gdiffsplit<cr>
-nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gb :Git blame<cr>
 
 " FZF.
 nmap <c-f> :Files<cr>
