@@ -24,7 +24,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'plasticboy/vim-markdown'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-abolish'
