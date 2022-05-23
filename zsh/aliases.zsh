@@ -7,6 +7,7 @@ alias dotfiles="cd $HOME/.dotfiles"
 alias finder="open -a Finder"
 alias safari="open -a Safari"
 alias typora="open -a Typora"
+alias preview="open -a Preview"
 
 # Zsh
 alias zshsrc="source ~/.zshrc"
@@ -53,5 +54,3 @@ alias python="python3"
 
 # Kitty
 alias icat="kitty +kitten icat"
-
-alias scalaold="/opt/homebrew/opt/scala@2.12/bin/scala"

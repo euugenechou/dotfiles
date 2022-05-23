@@ -80,6 +80,7 @@
 ctrl + cmd - t : open -a "Alacritty"
 ctrl + cmd - s : open -a "Safari"
 ctrl + cmd - d : open -a "Discord"
+ctrl + cmd - m : open -a "Messages"
 
 # focus window
 ctrl + cmd - h : yabai -m window --focus west
