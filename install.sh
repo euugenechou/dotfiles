@@ -33,6 +33,9 @@ fi
 
 for module in $wanted; do
     echo -n "Installing $module... "
-    git submodule update --init $module && cd "$module" && ./install.sh
+    git submodule update --init $module
+    pushd "$module" > /dev/null
+    ./install.sh
+    popd > /dev/null
     echo "done."
 done
