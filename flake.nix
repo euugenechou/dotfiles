@@ -1,23 +1,27 @@
 {
-    description = "eugebe's frosted flake";
+  description = "eugebe's frosted flake";
 
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-        home-manager.url = "github:nix-community/home-manager";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    };
+  inputs = {
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    outputs = inputs: {
-        defaultPackage.aarch64-linux = home-manager.defaultPackage.aarch64-linux;
-        defaultPackage.aarch64-darwin = home-manager.defaultPackage.aarch64-darwin;
+    # Home manager
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
-        homeConfigurations = {
-            "eugene" = inputs.home-manager.lib.homeManagerConfiguration {
-                system = "aarch64-darwin";
-                    homeDirectory = "/Users/eugene";
-                    username = "eugene";
-                    configuration.imports = [ ./home.nix ];
-            };
-        };
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      inherit (self) outputs;
+      mkHome = modules: pkgs: home-manager.lib.homeManagerConfiguration {
+        inherit modules pkgs;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+    in
+    {
+      homeConfigurations = {
+        "eugene@cosmocanyon" = mkHome [ ./homes/eugene/cosmocanyon.nix ] nixpkgs.legacyPackage.aarch64-darwin;
+      };
     };
 }
