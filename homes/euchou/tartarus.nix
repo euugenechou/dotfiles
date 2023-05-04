@@ -38,14 +38,16 @@
     };
   };
 
-  # TODO: Set your username
-  home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
-  };
+  # Home setup.
+  home.username = "eugene";
+  home.homeDirectory = "/Users/eugene";
+  home.stateVersion = "22.11";
 
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
+  programs.neovim.enable = {
+    enable = true;
+    extraConfig = ":luafile ./nvim/init.lua";
+  }; 
   # home.packages = with pkgs; [ steam ];
 
   # Enable home-manager and git
@@ -54,7 +56,4 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "22.11";
 }

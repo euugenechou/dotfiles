@@ -44,7 +44,10 @@
   home.stateVersion = "22.11";
 
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
+  programs.neovim.enable = {
+    enable = true;
+    extraConfig = ":luafile ./nvim/init.lua";
+  }; 
   # home.packages = with pkgs; [ steam ];
 
   # Enable home-manager and git

@@ -22,6 +22,7 @@
     {
       homeConfigurations = {
         "eugene@cosmocanyon" = mkHome [ ./homes/eugene/cosmocanyon.nix ] nixpkgs.legacyPackage.aarch64-darwin;
+        "euchou@tartarus" = mkHome [ ./homes/euchou/tartarus.nix ] nixpkgs.legacyPackage.aarch64-linux;
       };
     };
 }
