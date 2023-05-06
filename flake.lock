@@ -55,11 +55,11 @@
     "nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1678693695,
-        "narHash": "sha256-jHiU0xL+aj+q+bs9QGgsZmAQjPI38LwUTJ1pB7izYNM=",
+        "lastModified": 1683353138,
+        "narHash": "sha256-g6t78+mity/mog3OM0632tZx5VXyvFfvA7oyUu2Roms=",
         "owner": "euugenechou",
         "repo": "nvim",
-        "rev": "f06fa1072d6f7146494fca46f675216a977f7676",
+        "rev": "98c230e4d9291202a7f2041df99862a47fb3d0c1",
         "type": "github"
       },
       "original": {
