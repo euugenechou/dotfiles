@@ -15,9 +15,9 @@
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      # outputs.overlays.additions
+      # outputs.overlays.modifications
+      # outputs.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -43,12 +43,9 @@
   home.homeDirectory = "/Users/eugene";
   home.stateVersion = "22.11";
 
-  # Add stuff for your user as you see fit:
-  programs.neovim.enable = {
-    enable = true;
-    extraConfig = ":luafile ./nvim/init.lua";
-  }; 
-  # home.packages = with pkgs; [ steam ];
+  # Neovim
+  programs.neovim.enable = true;
+  home.file."./.config/nvim/" = outputs.modules.nvim;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

@@ -1,5 +1,5 @@
 {
-  description = "eugebe's frosted flake";
+  description = "Eugene's systems flake";
 
   inputs = {
     # Nixpkgs
@@ -9,6 +9,18 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Neovim
+    nvim = {
+      url = "github:euugenechou/nvim";
+      flake = false;
+    };
+
+    # Tmux
+    tmux = {
+      url = "github:euugenechou/tmux";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -20,9 +32,10 @@
       };
     in
     {
+      modules = import ./modules;
       homeConfigurations = {
-        "eugene@cosmocanyon" = mkHome [ ./homes/eugene/cosmocanyon.nix ] nixpkgs.legacyPackage.aarch64-darwin;
-        "euchou@tartarus" = mkHome [ ./homes/euchou/tartarus.nix ] nixpkgs.legacyPackage.aarch64-linux;
+        "euchou@tartarus" = mkHome [ ./configs/euchou/tartarus.nix ] nixpkgs.legacyPackages.aarch64-linux;
+        "eugene@cosmocanyon" = mkHome [ ./configs/eugene/cosmocanyon.nix ] nixpkgs.legacyPackages.aarch64-darwin;
       };
     };
 }
