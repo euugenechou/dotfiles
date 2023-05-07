@@ -51,35 +51,10 @@ in
     {
       enable = true;
       dotDir = ".config/zsh";
-      plugins = [
-        {
-          name = "zsh-autosuggestions";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-autosuggestions";
-            rev = "a411ef3";
-            sha256 = "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
-          };
-        }
-        {
-          name = "zsh-syntax-highlighting";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-syntax-highlighting";
-            rev = "932e29a";
-            sha256 = "sha256-gOG0NLlaJfotJfs+SUhGgLTNOnGLjoqnUp54V9aFJg8=";
-          };
-        }
-        {
-          name = "zsh-history-substring-search";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-history-substring-search";
-            rev = "0f80b8e";
-            sha256 = "sha256-Ptxik1r6anlP7QTqsN1S2Tli5lyRibkgGlVlwWZRG3k=";
-          };
-        }
-      ];
+      enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+      autocd = false;
+      plugins = [ ];
       sessionVariables = {
         EDITOR = "nvim";
       };
@@ -90,16 +65,20 @@ in
         vim = "nvim";
       };
       initExtra = ''
+        # -- key bindings -----------------------------------------------------
         bindkey '^F' autosuggest-accept
         bindkey ' ' magic-space
 
+        # -- prompt -----------------------------------------------------------
         NEWLINE=$'\n'
         PROMPT='%{$fg_bold[red]%}%n%{$reset_color%}%B %b%{$fg_bold[yellow]%}%~%{$reset_color%}$(git_prompt_info)%B''${NEWLINE}$ %b'
         ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[magenta]%}"
         ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
+        # -- styling -----------------------------------------------------------
         ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
 
+        # -- sources -----------------------------------------------------------
         if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
         then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
