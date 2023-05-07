@@ -9,18 +9,6 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Neovim
-    nvim = {
-      url = "github:euugenechou/nvim";
-      flake = false;
-    };
-
-    # Tmux
-    tmux = {
-      url = "github:euugenechou/tmux";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -32,7 +20,6 @@
       };
     in
     {
-      modules = import ./modules;
       homeConfigurations = {
         "euchou@tartarus" = mkHome [ ./configs/euchou/tartarus.nix ] nixpkgs.legacyPackages.aarch64-linux;
         "eugene@cosmocanyon" = mkHome [ ./configs/eugene/cosmocanyon.nix ] nixpkgs.legacyPackages.aarch64-darwin;

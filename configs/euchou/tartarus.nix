@@ -1,4 +1,18 @@
 { inputs, outputs, lib, config, pkgs, ... }:
+let
+  nvim = pkgs.fetchFromGitHub {
+    owner = "euugenechou";
+    repo = "nvim";
+    rev = "98c230e";
+    sha256 = "sha256-g6t78+mity/mog3OM0632tZx5VXyvFfvA7oyUu2Roms=";
+  };
+  tmux = pkgs.fetchFromGitHub {
+    owner = "euugenechou";
+    repo = "tmux";
+    rev = "10ef7f9";
+    sha256 = "sha256-ze9vT7+7sLl4WJefHldP++ZVMciYhk+GkjtSQEmtmJo=";
+  };
+in
 {
   nixpkgs = {
     config = {
@@ -14,15 +28,16 @@
 
   # Neovim
   programs.neovim.enable = true;
-  xdg.configFile.nvim.source = inputs.nvim;
-
-  # Tmux (not sure why this can't be linked with `xdg`)
-  programs.tmux.enable = true;
-  home.file."${config.home.homeDirectory}/.tmux.conf" = {
-    source = "${inputs.tmux}/.tmux.conf";
+  xdg.configFile.nvim = {
+    source = nvim;
+    recursive = true;
   };
-  home.file."${config.home.homeDirectory}/.tmux.conf.local" = {
-    source = "${inputs.tmux}/.tmux.conf.local";
+
+  # Tmux
+  programs.tmux.enable = true;
+  xdg.configFile.tmux = {
+    source = tmux;
+    recursive = true;
   };
 
   # Exa
@@ -36,10 +51,6 @@
     {
       enable = true;
       dotDir = ".config/zsh";
-      oh-my-zsh = {
-        enable = true;
-        theme = "agnoster";
-      };
       plugins = [
         {
           name = "zsh-autosuggestions";
@@ -83,13 +94,15 @@
         bindkey ' ' magic-space
 
         NEWLINE=$'\n'
-        PROMPT='%{$fg_bold[red]%}%n%{$reset_color%}%B %b%{$fg_bold[yellow]%}%~%{$reset_color%}$(git_prompt_info)%B$NEWLINE$ %b'
+        PROMPT='%{$fg_bold[red]%}%n%{$reset_color%}%B %b%{$fg_bold[yellow]%}%~%{$reset_color%}$(git_prompt_info)%B''${NEWLINE}$ %b'
         ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[magenta]%}"
         ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
         ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
 
-        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
+        then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
         fi
       '';
     };
@@ -112,3 +125,12 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 }
+
+
+
+
+
+
+
+
+

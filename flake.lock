@@ -52,45 +52,11 @@
         "type": "github"
       }
     },
-    "nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1683353138,
-        "narHash": "sha256-g6t78+mity/mog3OM0632tZx5VXyvFfvA7oyUu2Roms=",
-        "owner": "euugenechou",
-        "repo": "nvim",
-        "rev": "98c230e4d9291202a7f2041df99862a47fb3d0c1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "euugenechou",
-        "repo": "nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "nvim": "nvim",
-        "tmux": "tmux"
-      }
-    },
-    "tmux": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1678444562,
-        "narHash": "sha256-4nDJ+Wz9/mMQw0oyFaEvCkkrE3ZkJjNbmlm419Gls2s=",
-        "owner": "euugenechou",
-        "repo": "tmux",
-        "rev": "bf0599dfc024cc5fc96bcc3ad15e7864fbaebcba",
-        "type": "github"
-      },
-      "original": {
-        "owner": "euugenechou",
-        "repo": "tmux",
-        "type": "github"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },
