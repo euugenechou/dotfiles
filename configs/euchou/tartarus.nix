@@ -79,9 +79,8 @@ in
         ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
 
         # -- sources -----------------------------------------------------------
-        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
-        then
-        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
         fi
       '';
     };
