@@ -1,7 +1,15 @@
 # dotfiles
 
-The result of excessive(?) modularization.
+This may have been a big mistake.
 
 ```bash
-./install.sh [-a] [-h] [alacritty,nvim,tmux,yabai,zsh]+
+# Get nix first.
+sh <(curl -L https://nixos.org/nix/install)
+
+# Flakes are too bleeding edge.
+export NIX_CONFIG="experimental-features = nix-command flakes"
+
+# Bootstrap `home-manager`, then let it cook.
+nix shell nixpkgs#home-manager
+home-manager switch --flake .#username@hostname
 ```
