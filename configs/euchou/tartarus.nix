@@ -53,7 +53,6 @@ in
       dotDir = ".config/zsh";
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
-      autocd = false;
       plugins = [ ];
       sessionVariables = {
         EDITOR = "nvim";
@@ -64,24 +63,27 @@ in
         vi = "nvim";
         vim = "nvim";
       };
+      oh-my-zsh = {
+        enable = true;
+      };
       initExtra = ''
+        # -- sources -----------------------------------------------------------
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        fi
+
         # -- key bindings -----------------------------------------------------
         bindkey '^F' autosuggest-accept
         bindkey ' ' magic-space
 
         # -- prompt -----------------------------------------------------------
-        NEWLINE=$'\n'
-        PROMPT='%{$fg_bold[red]%}%n%{$reset_color%}%B %b%{$fg_bold[yellow]%}%~%{$reset_color%}$(git_prompt_info)%B''${NEWLINE}$ %b'
+        PROMPT="%{$fg_bold[red]%}%n%{$reset_color%}%B %b%{$fg_bold[yellow]%}%~%{$reset_color%}"'$(git_prompt_info)'"%B"$'\n'"$ %b"
         ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[magenta]%}"
         ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
-        # -- styling -----------------------------------------------------------
+        # -- prompt -----------------------------------------------------------
+        typeset -A ZSH_HIGHLIGHT_STYLES
         ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold
-
-        # -- sources -----------------------------------------------------------
-        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-        fi
       '';
     };
 
