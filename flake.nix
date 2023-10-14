@@ -1,5 +1,5 @@
 {
-  description = "eugebe's frosted flake";
+  description = "Eugene's systems flake";
 
   inputs = {
     # Nixpkgs
@@ -21,7 +21,8 @@
     in
     {
       homeConfigurations = {
-        "eugene@cosmocanyon" = mkHome [ ./homes/eugene/cosmocanyon.nix ] nixpkgs.legacyPackage.aarch64-darwin;
+        "euchou@tartarus" = mkHome [ ./configs/euchou/tartarus.nix ] nixpkgs.legacyPackages.aarch64-linux;
+        "eugene@cosmocanyon" = mkHome [ ./configs/eugene/cosmocanyon.nix ] nixpkgs.legacyPackages.aarch64-darwin;
       };
     };
 }
